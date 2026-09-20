@@ -29,6 +29,7 @@ def provider_status(collector, model, manual_result_enabled=False):
                "source_lag_seconds": getattr(collector, "source_lag_seconds", None),
                "last_frame_at": getattr(collector, "last_frame_at", None),
                "provider_error": getattr(collector, "last_error", None),
+               "provider_warning": getattr(collector, "last_warning", None),
                "leagues": []}
     if collector is not None and hasattr(collector, "status"):
         detail = collector.status()

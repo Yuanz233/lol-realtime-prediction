@@ -15,7 +15,7 @@ from crawl_training_history import candidates
 from schedule_index import completed_matches, league_matches
 from predictor import BASELINE, predict
 from provider import Collector, normalize, normalize_cito
-from lolesports_provider import LoLEsportsCollector
+from lolesports_provider import LoLEsportsCollector, MultiLeagueCollector
 from storage import game, lists, save
 from sync_completed_history import recent_completed
 from train_model import load_games, split_by_match
@@ -31,6 +31,20 @@ def frame(seconds, finished=False):
 
 
 class FlowTest(unittest.TestCase):
+    def test_multileague_partial_failure_is_warning_not_global_error(self):
+        def fake(league, error):
+            return type("FakeCollector", (), {"league_slug": league, "last_error": error,
+                "phase": "idle", "scheduled_start": None, "active_game_id": None,
+                "source_lag_seconds": None, "last_frame_at": None,
+                "status": lambda self: {"league": league, "error": error}})()
+        healthy = fake("lpl", None)
+        broken = fake("lec", "temporary timeout")
+        collector = MultiLeagueCollector([healthy, broken])
+        self.assertIsNone(collector.last_error)
+        self.assertIn("lec", collector.last_warning)
+        all_broken = MultiLeagueCollector([broken, fake("lck", "temporary timeout")])
+        self.assertIn("lec", all_broken.last_error)
+
     def test_lolesports_collector_reports_idle_when_schedule_has_no_match(self):
         empty = {"rehydrate": {"query": {"data": {"esports": {"events": []}}}}}
         html = '<script>(window[Symbol.for("ApolloSSRDataTransport")] ??= []).push(' + json.dumps(empty) + ')</script>'

@@ -18,8 +18,8 @@ function option(value, text) {
 function setConnection(status) {
   statusCache = status;
   const node = $('connection');
-  node.className = `connection ${status.provider_error ? 'error' : status.provider_enabled ? 'online' : 'offline'}`;
-  node.replaceChildren(); node.append(Object.assign(document.createElement('span'), {}), status.provider_error ? '数据源异常' : status.provider_enabled ? (phaseNames[status.provider_phase]||'实时源已连接') : '历史数据模式');
+  node.className = `connection ${status.provider_error ? 'error' : status.provider_warning ? 'warning' : status.provider_enabled ? 'online' : 'offline'}`;
+  node.replaceChildren(); node.append(Object.assign(document.createElement('span'), {}), status.provider_error ? '数据源异常' : status.provider_warning ? '部分同步异常' : status.provider_enabled ? (phaseNames[status.provider_phase]||'实时源已连接') : '历史数据模式');
   const trainedGames=status.model_training&&status.model_training.games;
   $('metric-model').textContent = `${modelName(status.model_kind)}${trainedGames?` · ${trainedGames}局`:''}`;
   const monitor=$('league-monitor'),leagues=status.leagues||[];monitor.replaceChildren();monitor.hidden=!leagues.length;
@@ -59,7 +59,7 @@ function filteredHistory() {
 
 function fillHistory() {
   const history = [...filteredHistory()].sort((a,b) => new Date(b.frame.played_at || 0) - new Date(a.frame.played_at || 0));
-  const total=archivedGames().length;$('metric-history').textContent = total; $('history-count').textContent = history.length===total?`${history.length} 局`:`${history.length} / ${total} 局`;
+  const total=archivedGames().length,syncing=statusCache.history_sync&&statusCache.history_sync.running,suffix=syncing?' · 补齐中':'';$('metric-history').textContent = total; $('history-count').textContent = (history.length===total?`${history.length} 局`:`${history.length} / ${total} 局`)+suffix;
   const grouped = new Map();
   history.forEach(item => { const key=String(item.match_id); if(!grouped.has(key)) grouped.set(key,[]); grouped.get(key).push(item); });
   const series = $('series-select'), previous = series.value; series.replaceChildren();

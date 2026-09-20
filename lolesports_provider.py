@@ -428,6 +428,12 @@ class MultiLeagueCollector:
     def last_error(self):
         errors = ["%s: %s" % (item.league_slug, item.last_error)
                   for item in self.collectors if item.last_error]
+        return "; ".join(errors) if len(errors) == len(self.collectors) else None
+
+    @property
+    def last_warning(self):
+        errors = ["%s: %s" % (item.league_slug, item.last_error)
+                  for item in self.collectors if item.last_error]
         if self.history_sync is not None and self.history_sync.last_error:
             errors.append("history: %s" % self.history_sync.last_error)
         return "; ".join(errors) if errors else None
@@ -438,5 +444,6 @@ class MultiLeagueCollector:
                 "provider_phase": primary.phase, "active_game_id": primary.active_game_id,
                 "source_lag_seconds": primary.source_lag_seconds,
                 "last_frame_at": self.last_frame_at, "provider_error": self.last_error,
+                "provider_warning": self.last_warning,
                 "leagues": [item.status() for item in self.collectors],
                 "history_sync": self.history_sync.status() if self.history_sync else None}
