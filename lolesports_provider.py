@@ -18,6 +18,7 @@ from predictor import predict
 from provider import normalize
 from schedule_index import event_competition, league_matches, read_schedule
 from storage import game, save
+from tls_context import TLS_CONTEXT
 
 
 LOG = logging.getLogger(__name__)
@@ -35,7 +36,7 @@ def website_json(kind, game_id, start=None, timeout=20):
     request = urllib.request.Request(url, headers={
         "Accept": "application/json", "User-Agent": "lol-realtime-prediction/0.1"})
     try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
+        with urllib.request.urlopen(request, timeout=timeout, context=TLS_CONTEXT) as response:
             if response.status == 204:
                 return None
             return json.load(response)

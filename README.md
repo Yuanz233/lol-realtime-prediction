@@ -27,7 +27,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 
 ## 本地启动
 
-Python 3.9+，首版无需 GPU 或第三方 Python 包。为了让本地和服务器使用同一流程，仍建议建立虚拟环境并执行 `requirements.txt`：
+Python 3.9+，首版无需 GPU。`requirements.txt` 只安装 `certifi`，用于在 Windows Server 上提供可验证的 HTTPS 根证书。建议建立虚拟环境并执行：
 
 ```bash
 python3 -m venv .venv

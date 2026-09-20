@@ -15,6 +15,7 @@ from pathlib import Path
 from predictor import load_model, predict
 from provider import normalize
 from storage import save
+from tls_context import TLS_CONTEXT
 
 FEED = "https://feed.lolesports.com/livestats/v1/window/"
 
@@ -36,7 +37,7 @@ def fetch_window(game_id, start=None):
     payload = None
     for attempt in range(4):
         try:
-            with urllib.request.urlopen(request, timeout=20) as response:
+            with urllib.request.urlopen(request, timeout=20, context=TLS_CONTEXT) as response:
                 payload = json.load(response)
             break
         except urllib.error.HTTPError as exc:

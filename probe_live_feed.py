@@ -6,6 +6,8 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+
+from tls_context import TLS_CONTEXT
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -23,7 +25,7 @@ def request(kind, game_id, delay_seconds, timeout=10):
     req = urllib.request.Request(url, headers={
         "Accept": "application/json", "User-Agent": "lol-realtime-prediction/0.1-live-probe"})
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as response:
+        with urllib.request.urlopen(req, timeout=timeout, context=TLS_CONTEXT) as response:
             body = response.read()
             status = response.status
     except urllib.error.HTTPError as exc:

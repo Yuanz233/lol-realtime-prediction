@@ -9,6 +9,7 @@ import urllib.request
 
 from predictor import predict
 from storage import game, save
+from tls_context import TLS_CONTEXT
 
 LOG = logging.getLogger(__name__)
 API = "https://api.citoapi.com/api/v1"
@@ -140,7 +141,7 @@ def cito_get(path, token):
         raise ValueError("invalid Cito path")
     request = urllib.request.Request(API + path,
         headers={"x-api-key": token, "Accept": "application/json"})
-    with urllib.request.urlopen(request, timeout=15) as response:
+    with urllib.request.urlopen(request, timeout=15, context=TLS_CONTEXT) as response:
         payload = json.load(response)
     if not isinstance(payload, dict) or payload.get("success") is False:
         raise ValueError("Cito returned unsuccessful response for " + path)

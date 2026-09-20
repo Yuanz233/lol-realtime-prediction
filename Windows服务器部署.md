@@ -24,7 +24,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 .\.venv\Scripts\Activate.ps1
 ```
 
-当前 `requirements.txt` 没有第三方包，这是正常状态：HTTP 服务、SQLite、免费数据采集、训练和预测都使用 Python 标准库。保留安装命令后，将来新增依赖时服务器部署步骤不需要改变。
+当前 `requirements.txt` 只安装 `certifi`，用于给 Windows Server 上的 Python 提供可信 HTTPS 根证书。HTTP 服务、SQLite、训练和预测本身仍使用 Python 标准库。
 
 如果服务器只有 `py` 命令，则把上面的 `python -m venv .venv` 改为 `py -3 -m venv .venv`。
 

@@ -7,6 +7,8 @@ import json
 import re
 import urllib.request
 
+from tls_context import TLS_CONTEXT
+
 SCHEDULE_URL = "https://lolesports.com/en-US/leagues/"
 MARKER = '<script>(window[Symbol.for("ApolloSSRDataTransport")]'
 
@@ -16,7 +18,7 @@ def read_schedule(league_slug="lpl"):
         raise ValueError("invalid LoL Esports league slug")
     request = urllib.request.Request(SCHEDULE_URL + league_slug, headers={
         "Accept": "text/html", "User-Agent": "lol-realtime-prediction/0.1"})
-    with urllib.request.urlopen(request, timeout=30) as response:
+    with urllib.request.urlopen(request, timeout=30, context=TLS_CONTEXT) as response:
         return response.read().decode("utf-8")
 
 
