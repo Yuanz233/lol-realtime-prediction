@@ -38,6 +38,8 @@ python app.py
 
 打开 `http://127.0.0.1:8000`。直接运行默认启用免费的 LoL Esports 采集器，并自动发现 LPL、LCK、LEC、VCS；它使用网站展示接口，仍属于没有稳定性保证的实验路径。默认每30秒保存一次，与训练样本间隔一致。如需纯离线查看历史，可用 `LIVE_PROVIDER=none python app.py`。
 
+网页、JavaScript、CSS和JSON接口都返回 `Cache-Control: no-store`，更新代码并重启服务后，手机重新载入页面即可取得最新版本。
+
 需要在本机显示待核验赛果按钮时运行：
 
 ```bash

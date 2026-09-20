@@ -49,8 +49,11 @@ def make_handler(db_path, collector, model, manual_result_enabled=False):
         def _send(self, body, content_type, status=200, cache_control=None):
             self.send_response(status)
             self.send_header("Content-Type", content_type + "; charset=utf-8")
-            self.send_header("Cache-Control", cache_control or (
-                "no-store" if content_type == "application/json" else "public, max-age=3600"))
+            policy = cache_control or "no-store"
+            self.send_header("Cache-Control", policy)
+            if policy == "no-store":
+                self.send_header("Pragma", "no-cache")
+                self.send_header("Expires", "0")
             self.send_header("X-Content-Type-Options", "nosniff")
             self.end_headers()
             self.wfile.write(body)
@@ -87,8 +90,7 @@ def make_handler(db_path, collector, model, manual_result_enabled=False):
             if file.parent != STATIC or not file.is_file() or file.suffix not in MIME:
                 self._send(b"Not found", "text/plain", 404)
                 return
-            self._send(file.read_bytes(), MIME[file.suffix],
-                       cache_control="no-store" if file.name == "index.html" else None)
+            self._send(file.read_bytes(), MIME[file.suffix])
 
         def do_POST(self):
             path = unquote(urlparse(self.path).path)
