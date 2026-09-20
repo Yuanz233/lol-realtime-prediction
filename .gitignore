@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+.env
+data/*
+!data/matches.sqlite3
+!data/history_crawl_report.json
+models/*.json
+!models/live.json
+backups/
+logs/
+dist/

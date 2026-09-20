@@ -1,0 +1,6 @@
+# Runtime dependencies: none.
+# The HTTP service, SQLite storage, LoL Esports polling and logistic-regression
+# inference/training all use the Python standard library. Keep this file so the
+# same deployment command remains valid when dependencies are added later:
+#
+#   python -m pip install -r requirements.txt

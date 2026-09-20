@@ -1,0 +1,516 @@
+{
+  "source_page": "https://lolesports.com/en-US/leagues/lpl",
+  "manifest": "/Users/yuanze/projects/lol-realtime-prediction/training_manifest.json",
+  "games": [
+    {
+      "match_id": "117155436343202202",
+      "game_id": "117155436343202203",
+      "number": 1,
+      "date": "2026-09-13",
+      "team_ids": {
+        "AL": "99566404856367466",
+        "BLG": "99566404853854212"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 1807,
+      "label_source": "https://gol.gg/game/stats/82967/page-game/",
+      "status": "skipped",
+      "points": 31
+    },
+    {
+      "match_id": "117155436343202202",
+      "game_id": "117155436343202204",
+      "number": 2,
+      "date": "2026-09-13",
+      "team_ids": {
+        "AL": "99566404856367466",
+        "BLG": "99566404853854212"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 1897,
+      "label_source": "https://gol.gg/game/stats/82968/page-game/",
+      "status": "skipped",
+      "points": 16
+    },
+    {
+      "match_id": "117155436343202202",
+      "game_id": "117155436343202205",
+      "number": 3,
+      "date": "2026-09-13",
+      "team_ids": {
+        "AL": "99566404856367466",
+        "BLG": "99566404853854212"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 2126,
+      "label_source": "https://gol.gg/game/stats/82969/page-game/",
+      "status": "skipped",
+      "points": 18
+    },
+    {
+      "match_id": "117155436343202202",
+      "game_id": "117155436343202206",
+      "number": 4,
+      "date": "2026-09-13",
+      "team_ids": {
+        "AL": "99566404856367466",
+        "BLG": "99566404853854212"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 1866,
+      "label_source": "https://gol.gg/game/stats/82970/page-game/",
+      "status": "skipped",
+      "points": 16
+    },
+    {
+      "match_id": "117155436343202196",
+      "game_id": "117155436343202197",
+      "number": 1,
+      "date": "2026-09-12",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "AL": "99566404856367466"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 2275,
+      "label_source": "https://gol.gg/game/stats/82836/page-game/",
+      "status": "skipped",
+      "points": 19
+    },
+    {
+      "match_id": "117155436343202196",
+      "game_id": "117155436343202198",
+      "number": 2,
+      "date": "2026-09-12",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "AL": "99566404856367466"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 2186,
+      "label_source": "https://gol.gg/game/stats/82837/page-game/",
+      "status": "skipped",
+      "points": 19
+    },
+    {
+      "match_id": "117155436343202196",
+      "game_id": "117155436343202199",
+      "number": 3,
+      "date": "2026-09-12",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "AL": "99566404856367466"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 1915,
+      "label_source": "https://gol.gg/game/stats/82838/page-game/",
+      "status": "skipped",
+      "points": 16
+    },
+    {
+      "match_id": "117155436343202196",
+      "game_id": "117155436343202200",
+      "number": 4,
+      "date": "2026-09-12",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "AL": "99566404856367466"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 1777,
+      "label_source": "https://gol.gg/game/stats/82839/page-game/",
+      "status": "skipped",
+      "points": 15
+    },
+    {
+      "match_id": "117155436343202196",
+      "game_id": "117155436343202201",
+      "number": 5,
+      "date": "2026-09-12",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "AL": "99566404856367466"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 1811,
+      "label_source": "https://gol.gg/game/stats/82840/page-game/",
+      "status": "skipped",
+      "points": 16
+    },
+    {
+      "match_id": "117155436343202190",
+      "game_id": "117155436343202191",
+      "number": 1,
+      "date": "2026-09-08",
+      "team_ids": {
+        "LGD": "99566404846951820",
+        "IG": "99566404848691211"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 1618,
+      "label_source": "https://gol.gg/game/stats/82793/page-game/",
+      "status": "skipped",
+      "points": 14
+    },
+    {
+      "match_id": "117155436343202190",
+      "game_id": "117155436343202192",
+      "number": 2,
+      "date": "2026-09-08",
+      "team_ids": {
+        "LGD": "99566404846951820",
+        "IG": "99566404848691211"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 1530,
+      "label_source": "https://gol.gg/game/stats/82794/page-game/",
+      "status": "skipped",
+      "points": 13
+    },
+    {
+      "match_id": "117155436343202190",
+      "game_id": "117155436343202193",
+      "number": 3,
+      "date": "2026-09-08",
+      "team_ids": {
+        "LGD": "99566404846951820",
+        "IG": "99566404848691211"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 1665,
+      "label_source": "https://gol.gg/game/stats/82795/page-game/",
+      "status": "skipped",
+      "points": 14
+    },
+    {
+      "match_id": "117155436343202172",
+      "game_id": "117155436343202173",
+      "number": 1,
+      "date": "2026-09-07",
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "AL": "99566404856367466"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 1865,
+      "label_source": "https://gol.gg/game/stats/82725/page-game/",
+      "status": "skipped",
+      "points": 16
+    },
+    {
+      "match_id": "117155436343202172",
+      "game_id": "117155436343202174",
+      "number": 2,
+      "date": "2026-09-07",
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "AL": "99566404856367466"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 1980,
+      "label_source": "https://gol.gg/game/stats/82726/page-game/",
+      "status": "skipped",
+      "points": 17
+    },
+    {
+      "match_id": "117155436343202172",
+      "game_id": "117155436343202175",
+      "number": 3,
+      "date": "2026-09-07",
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "AL": "99566404856367466"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 1495,
+      "label_source": "https://gol.gg/game/stats/82727/page-game/",
+      "status": "skipped",
+      "points": 13
+    },
+    {
+      "match_id": "117155436343202178",
+      "game_id": "117155436343202179",
+      "number": 1,
+      "date": "2026-09-06",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "IG": "99566404848691211"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 1408,
+      "label_source": "https://gol.gg/game/stats/82715/page-game/",
+      "status": "skipped",
+      "points": 12
+    },
+    {
+      "match_id": "117155436343202178",
+      "game_id": "117155436343202180",
+      "number": 2,
+      "date": "2026-09-06",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "IG": "99566404848691211"
+      },
+      "winner_code": "WE",
+      "duration_seconds": 1893,
+      "label_source": "https://gol.gg/game/stats/82716/page-game/",
+      "status": "imported",
+      "points": 17,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1899,
+      "pause_adjusted_seconds": 71,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "117155436343202178",
+      "game_id": "117155436343202181",
+      "number": 3,
+      "date": "2026-09-06",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "IG": "99566404848691211"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 2025,
+      "label_source": "https://gol.gg/game/stats/82717/page-game/",
+      "status": "skipped",
+      "points": 17
+    },
+    {
+      "match_id": "117155436343202178",
+      "game_id": "117155436343202182",
+      "number": 4,
+      "date": "2026-09-06",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "IG": "99566404848691211"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 1542,
+      "label_source": "https://gol.gg/game/stats/82718/page-game/",
+      "status": "skipped",
+      "points": 13
+    },
+    {
+      "match_id": "117155436343202166",
+      "game_id": "117155436343202167",
+      "number": 1,
+      "date": "2026-09-05",
+      "team_ids": {
+        "NIP": "101388912914513220",
+        "JDG": "99566404852189289"
+      },
+      "winner_code": "NIP",
+      "duration_seconds": 2382,
+      "label_source": "https://gol.gg/game/stats/82429/page-game/",
+      "status": "imported",
+      "points": 20,
+      "winner_side": "red",
+      "actual_duration_seconds": 2383,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": true
+    },
+    {
+      "match_id": "117155436343202166",
+      "game_id": "117155436343202168",
+      "number": 2,
+      "date": "2026-09-05",
+      "team_ids": {
+        "NIP": "101388912914513220",
+        "JDG": "99566404852189289"
+      },
+      "winner_code": "NIP",
+      "duration_seconds": 1976,
+      "label_source": "https://gol.gg/game/stats/82430/page-game/",
+      "status": "skipped",
+      "points": 17
+    },
+    {
+      "match_id": "117155436343202166",
+      "game_id": "117155436343202169",
+      "number": 3,
+      "date": "2026-09-05",
+      "team_ids": {
+        "NIP": "101388912914513220",
+        "JDG": "99566404852189289"
+      },
+      "winner_code": "NIP",
+      "duration_seconds": 1679,
+      "label_source": "https://gol.gg/game/stats/82431/page-game/",
+      "status": "skipped",
+      "points": 15
+    },
+    {
+      "match_id": "117155436343202160",
+      "game_id": "117155436343202161",
+      "number": 1,
+      "date": "2026-09-05",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "TES": "99566404854685458"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 1936,
+      "label_source": "https://gol.gg/game/stats/82424/page-game/",
+      "status": "imported",
+      "points": 17,
+      "winner_side": "red",
+      "actual_duration_seconds": 1941,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "117155436343202160",
+      "game_id": "117155436343202162",
+      "number": 2,
+      "date": "2026-09-05",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "TES": "99566404854685458"
+      },
+      "winner_code": "TES",
+      "duration_seconds": 1700,
+      "label_source": "https://gol.gg/game/stats/82425/page-game/",
+      "status": "imported",
+      "points": 15,
+      "winner_side": "red",
+      "actual_duration_seconds": 1708,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "117155436343202160",
+      "game_id": "117155436343202163",
+      "number": 3,
+      "date": "2026-09-05",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "TES": "99566404854685458"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 2548,
+      "label_source": "https://gol.gg/game/stats/82426/page-game/",
+      "status": "imported",
+      "points": 22,
+      "winner_side": "blue",
+      "actual_duration_seconds": 2553,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "117155436343202160",
+      "game_id": "117155436343202164",
+      "number": 4,
+      "date": "2026-09-05",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "TES": "99566404854685458"
+      },
+      "winner_code": "TES",
+      "duration_seconds": 2174,
+      "label_source": "https://gol.gg/game/stats/82427/page-game/",
+      "status": "imported",
+      "points": 19,
+      "winner_side": "red",
+      "actual_duration_seconds": 2179,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "117155436343202160",
+      "game_id": "117155436343202165",
+      "number": 5,
+      "date": "2026-09-05",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "TES": "99566404854685458"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 1504,
+      "label_source": "https://gol.gg/game/stats/82428/page-game/",
+      "status": "imported",
+      "points": 13,
+      "winner_side": "red",
+      "actual_duration_seconds": 1510,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "117155436343202154",
+      "game_id": "117155436343202155",
+      "number": 1,
+      "date": "2026-09-03",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "BLG": "99566404853854212"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 1762,
+      "label_source": "https://gol.gg/game/stats/82434/page-game/",
+      "status": "imported",
+      "points": 15,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1767,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "117155436343202154",
+      "game_id": "117155436343202156",
+      "number": 2,
+      "date": "2026-09-03",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "BLG": "99566404853854212"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 1512,
+      "label_source": "https://gol.gg/game/stats/82435/page-game/",
+      "status": "imported",
+      "points": 13,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1518,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "117155436343202154",
+      "game_id": "117155436343202157",
+      "number": 3,
+      "date": "2026-09-03",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "BLG": "99566404853854212"
+      },
+      "winner_code": "WE",
+      "duration_seconds": 2020,
+      "label_source": "https://gol.gg/game/stats/82436/page-game/",
+      "status": "imported",
+      "points": 17,
+      "winner_side": "red",
+      "actual_duration_seconds": 2025,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "117155436343202154",
+      "game_id": "117155436343202158",
+      "number": 4,
+      "date": "2026-09-03",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "BLG": "99566404853854212"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 1491,
+      "label_source": "https://gol.gg/game/stats/82437/page-game/",
+      "status": "imported",
+      "points": 13,
+      "winner_side": "red",
+      "actual_duration_seconds": 1495,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    }
+  ],
+  "errors": []
+}

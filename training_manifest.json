@@ -1,0 +1,101 @@
+{
+  "description": "Curated LPL 2026 Grand Finals per-game results. Winners and durations were checked against Games of Legends single-game/series pages; match/game IDs come from the public LoL Esports schedule page. No outcome is inferred from total gold or series score.",
+  "verified_at": "2026-09-16",
+  "series": [
+    {
+      "match_id": "117155436343202202",
+      "date": "2026-09-13",
+      "teams": ["AL", "BLG"],
+      "gol_first_game": 82967,
+      "games": [
+        {"winner": "AL", "duration": "30:07"},
+        {"winner": "AL", "duration": "31:37"},
+        {"winner": "BLG", "duration": "35:26"},
+        {"winner": "AL", "duration": "31:06"}
+      ]
+    },
+    {
+      "match_id": "117155436343202196",
+      "date": "2026-09-12",
+      "teams": ["AL", "IG"],
+      "gol_first_game": 82836,
+      "games": [
+        {"winner": "IG", "duration": "37:55"},
+        {"winner": "AL", "duration": "36:26"},
+        {"winner": "AL", "duration": "31:55"},
+        {"winner": "IG", "duration": "29:37"},
+        {"winner": "AL", "duration": "30:11"}
+      ]
+    },
+    {
+      "match_id": "117155436343202190",
+      "date": "2026-09-08",
+      "teams": ["LGD", "IG"],
+      "gol_first_game": 82793,
+      "games": [
+        {"winner": "IG", "duration": "26:58"},
+        {"winner": "IG", "duration": "25:30"},
+        {"winner": "IG", "duration": "27:45"}
+      ]
+    },
+    {
+      "match_id": "117155436343202172",
+      "date": "2026-09-07",
+      "teams": ["BLG", "AL"],
+      "gol_first_game": 82725,
+      "games": [
+        {"winner": "BLG", "duration": "31:05"},
+        {"winner": "BLG", "duration": "33:00"},
+        {"winner": "BLG", "duration": "24:55"}
+      ]
+    },
+    {
+      "match_id": "117155436343202178",
+      "date": "2026-09-06",
+      "teams": ["WE", "IG"],
+      "gol_first_game": 82715,
+      "games": [
+        {"winner": "IG", "duration": "23:28"},
+        {"winner": "WE", "duration": "31:33"},
+        {"winner": "IG", "duration": "33:45"},
+        {"winner": "IG", "duration": "25:42"}
+      ]
+    },
+    {
+      "match_id": "117155436343202166",
+      "date": "2026-09-05",
+      "teams": ["NIP", "JDG"],
+      "gol_first_game": 82429,
+      "games": [
+        {"winner": "NIP", "duration": "39:42"},
+        {"winner": "NIP", "duration": "32:56"},
+        {"winner": "NIP", "duration": "27:59"}
+      ]
+    },
+    {
+      "match_id": "117155436343202160",
+      "date": "2026-09-05",
+      "teams": ["IG", "TES"],
+      "gol_first_game": 82424,
+      "games": [
+        {"winner": "IG", "duration": "32:16"},
+        {"winner": "TES", "duration": "28:20"},
+        {"winner": "IG", "duration": "42:28"},
+        {"winner": "TES", "duration": "36:14"},
+        {"winner": "IG", "duration": "25:04"}
+      ]
+    },
+    {
+      "match_id": "117155436343202154",
+      "date": "2026-09-03",
+      "teams": ["WE", "BLG"],
+      "gol_first_game": 82434,
+      "games": [
+        {"winner": "BLG", "duration": "29:22"},
+        {"winner": "BLG", "duration": "25:12"},
+        {"winner": "WE", "duration": "33:40"},
+        {"winner": "BLG", "duration": "24:51"}
+      ]
+    }
+  ]
+}

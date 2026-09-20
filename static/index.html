@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071014">
+  <title>峡谷脉搏 · LoL 胜率观察</title>
+  <link rel="stylesheet" href="/style.css?v=20260919-3">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <main>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="峡谷脉搏首页"><span class="brand-mark" aria-hidden="true"><i></i></span><span><strong>峡谷脉搏</strong><small>RIFT PULSE</small></span></a>
+      <div id="connection" class="connection loading"><span></span>正在连接</div>
+    </header>
+    <section class="hero">
+      <div><p class="eyebrow">LIVE MATCH INTELLIGENCE</p><h1>每一次资源交换，<br><em>都改变比赛走向。</em></h1><p class="hero-copy">根据局内经济、击杀与地图资源，跟踪职业比赛的蓝方获胜概率。数据可能晚于赛场或直播画面。</p></div>
+      <div class="hero-metrics" aria-label="数据概况"><div><span id="metric-live">—</span><small>进行中</small></div><div><span id="metric-history">—</span><small>历史对局</small></div><div><span id="metric-model">基线</span><small>当前模型</small></div></div>
+    </section>
+    <section class="live-console panel" aria-labelledby="live-heading">
+      <div class="section-heading"><div><p class="eyebrow live-eyebrow"><span class="pulse-dot"></span> LIVE CENTER</p><h2 id="live-heading">当前比赛</h2></div><span id="live-count" class="count-pill">0 场</span></div>
+      <div id="league-monitor" class="league-monitor" aria-live="polite" hidden></div>
+      <div class="live-layout"><div class="field"><label for="live-select">选择进行中的对局</label><select id="live-select" disabled><option value="">暂无实时比赛</option></select></div><button id="open-live" class="primary-button" type="button" disabled>查看实时走势 <span>→</span></button></div>
+      <div id="live-empty" class="live-empty" aria-live="polite"><div class="radar" aria-hidden="true"><i></i><b></b></div><div><strong>当前没有可用的实时比赛</strong><p id="live-empty-copy">页面会持续检查数据源；有新比赛时可在上方选择。</p></div></div>
+    </section>
+    <section class="archive" aria-labelledby="archive-heading">
+      <div class="section-heading archive-heading"><div><p class="eyebrow">MATCH ARCHIVE</p><h2 id="archive-heading">历史比赛</h2></div><span id="history-count" class="count-pill">0 局</span></div>
+      <div class="archive-filters panel" aria-label="历史比赛筛选">
+        <div class="field"><label for="league-select">赛区</label><select id="league-select"><option value="">全部赛区</option></select></div>
+        <div class="field"><label for="tournament-select">赛事 / 赛季</label><select id="tournament-select"><option value="">全部赛事</option></select></div>
+        <div class="field"><label for="stage-select">阶段</label><select id="stage-select"><option value="">全部阶段</option></select></div>
+      </div>
+      <div class="archive-picker panel"><div class="field"><label for="series-select">系列赛</label><select id="series-select"><option value="">暂无历史数据</option></select></div><div class="field"><label for="history-select">对局</label><select id="history-select" disabled><option value="">请选择对局</option></select></div><button id="open-history" class="secondary-button" type="button" disabled>查看曲线</button></div>
+    </section>
+    <section class="match-view panel" id="match-view" hidden aria-labelledby="match-title">
+      <div class="match-head"><div><p id="detail-state" class="eyebrow">MATCH OVERVIEW</p><h2 id="match-title">—</h2><p id="match-meta" class="match-meta"></p></div><div id="state-badge" class="state-badge">已结束</div></div>
+      <div class="probability-board"><div class="prob-team blue-team"><span>BLUE SIDE</span><strong id="blue-name">—</strong><b id="blue-prob">—</b></div><div class="prob-center"><span id="game-clock">00:00</span><small>游戏时间</small></div><div class="prob-team red-team"><span>RED SIDE</span><strong id="red-name">—</strong><b id="red-prob">—</b></div></div>
+      <div class="prob-bar" aria-hidden="true"><i id="blue-bar"></i><span id="bar-marker"></span></div><div class="bar-captions"><span>蓝方胜率</span><span>红方胜率</span></div>
+      <div class="visual-grid">
+        <div class="chart-card"><div class="card-heading"><div><span>WIN PROBABILITY</span><h3>胜率走势</h3></div><div class="legend"><i></i>蓝方获胜概率</div></div><div class="chart-shell"><span class="axis-label axis-top">100%</span><span class="axis-label axis-mid">50%</span><span class="axis-label axis-bottom">0%</span><svg id="chart" viewBox="0 0 720 270" preserveAspectRatio="none" role="img" aria-label="蓝方胜率随游戏时间变化曲线"></svg></div><div id="chart-times" class="chart-times"></div></div>
+        <aside class="snapshot-card"><div class="card-heading"><div><span>GAME STATE</span><h3>当前资源</h3></div></div><div class="stat-header"><span id="stat-blue">蓝方</span><small>对比</small><span id="stat-red">红方</span></div><div id="stats" class="stats"></div></aside>
+      </div>
+      <div class="data-note"><span class="info-icon">i</span><div><strong id="model-label">模型信息</strong><p id="updated-at"></p></div></div>
+      <div id="result-confirm" class="result-confirm" hidden>
+        <div><strong>回放赛果确认</strong><p>看完回放或逐局赛果页后，选择胜方并保存来源。确认后该局才会进入下一次模型训练。</p></div>
+        <div class="result-source"><label for="result-source">回放或赛果链接</label><input id="result-source" type="url" inputmode="url" placeholder="https://..." autocomplete="off"></div>
+        <div class="result-actions"><button id="confirm-blue" type="button">确认蓝方胜</button><button id="confirm-red" type="button">确认红方胜</button></div>
+        <p id="result-message" class="result-message" aria-live="polite"></p>
+      </div>
+    </section>
+    <section id="initial-empty" class="initial-empty panel"><p>选择一场历史比赛，即可查看完整胜率曲线和资源变化。</p></section>
+    <footer><span>RIFT PULSE · PERSONAL ANALYTICS</span><p>预测是模型对已取得局内状态的估计，不代表比赛结果或投注建议。</p></footer>
+  </main>
+  <script src="/app.js?v=20260920-3" defer></script>
+</body>
+</html>

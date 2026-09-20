@@ -1,0 +1,60 @@
+{
+  "kind": "trained_logistic_uncalibrated",
+  "features": [
+    "time_min",
+    "gold_diff_k",
+    "kills_diff",
+    "towers_diff",
+    "drakes_diff",
+    "nashors_diff",
+    "inhibitors_diff"
+  ],
+  "intercept": -0.6706675275572358,
+  "weights": [
+    -0.14912708179333173,
+    0.905040695999131,
+    0.4985416689448953,
+    0.635975524137041,
+    0.21025343068550822,
+    0.0978325616229808,
+    0.060284181047775845
+  ],
+  "means": [
+    16.57823630137008,
+    -0.28234863013698663,
+    -0.4332191780821918,
+    0.05034246575342466,
+    -0.2924657534246575,
+    0.027054794520547945,
+    -0.02054794520547945
+  ],
+  "scales": [
+    9.862833891951889,
+    4.129746518768307,
+    5.037631596558602,
+    1.9635025715467669,
+    1.3614348603455613,
+    1.0,
+    1.0
+  ],
+  "holdout": {
+    "train_games": 35,
+    "test_games": 11,
+    "train_matches": 9,
+    "test_matches": 3,
+    "train_frames": 2189,
+    "test_frames": 731,
+    "test_metrics": {
+      "frames": 731,
+      "log_loss": 0.5633,
+      "brier": 0.1994
+    }
+  },
+  "training": {
+    "games": 46,
+    "matches": 12,
+    "frames": 2920,
+    "sample_interval_seconds": 30,
+    "refit_on_all_labeled_data": true
+  }
+}
