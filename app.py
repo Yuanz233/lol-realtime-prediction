@@ -147,7 +147,7 @@ def main():
             game_id=game_id or None, match_id=match_id or None)
     elif live_provider == "lolesports":
         leagues_text = os.getenv("LOLESPORTS_LEAGUES",
-                                  os.getenv("LOLESPORTS_LEAGUE", "lpl,lck,lec,vcs"))
+                                  os.getenv("LOLESPORTS_LEAGUE", "lpl,lck,lec,vcs,worlds"))
         leagues = list(dict.fromkeys(value.strip().lower() for value in leagues_text.split(",")
                                      if value.strip()))
         if not leagues:

@@ -1,6 +1,6 @@
 param(
     [int]$Port = 8000,
-    [string]$Leagues = "lpl,lck,lec,vcs",
+    [string]$Leagues = "lpl,lck,lec,vcs,worlds",
     [switch]$AllowManualResult,
     [switch]$LogToFile
 )

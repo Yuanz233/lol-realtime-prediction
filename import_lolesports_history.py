@@ -77,6 +77,20 @@ def validate_window(payload, game_id, match_id, team_ids):
         raise ValueError("feed changed blue/red team IDs")
 
 
+def active_beginning(first, game_id, match_id, team_ids, fetch=fetch_window):
+    """Skip zero-stat initialization frames before the playable timeline begins."""
+    raw_beginning = timestamp(first["frames"][0]["rfc460Timestamp"])
+    for seconds in range(0, 301, 10):
+        payload = first if seconds == 0 else fetch(game_id, raw_beginning + timedelta(seconds=seconds))
+        validate_window(payload, str(game_id), match_id, team_ids)
+        for source in payload["frames"]:
+            blue = source.get("blueTeam") or {}
+            red = source.get("redTeam") or {}
+            if blue.get("totalGold", 0) > 0 and red.get("totalGold", 0) > 0:
+                return timestamp(source["rfc460Timestamp"])
+    raise ValueError("feed has no active frame with nonzero team gold in first five minutes")
+
+
 def convert(payload, source, beginning, names, team_ids, winner_side=None, label_source=None,
             pause_intervals=(), outcome_reconciled=False, competition=None,
             mark_finished=False):
@@ -126,7 +140,11 @@ def detect_pauses(game_id, beginning, duration, expected_duration_seconds,
             frames = payload["frames"]
             latest = frames[-1]
             if latest.get("gameState") == "paused":
-                last_paused = timestamp(latest["rfc460Timestamp"])
+                # Some archived feeds advance the timestamp while remaining
+                # paused. Keep the first paused instant or most of the pause
+                # would disappear from the reconstructed game clock.
+                if last_paused is None:
+                    last_paused = timestamp(latest["rfc460Timestamp"])
             elif last_paused is not None:
                 resumed = next((timestamp(f["rfc460Timestamp"]) for f in frames
                                 if f.get("gameState") == "in_game"), None)
@@ -166,7 +184,7 @@ def collect(game_id, names, winner_side, label_source, step_seconds=30, pause_se
     team_ids = teams(first)
     if expected_team_ids is not None and set(team_ids.values()) != set(map(str, expected_team_ids)):
         raise ValueError("feed team IDs disagree with verified schedule")
-    beginning = timestamp(first["frames"][0]["rfc460Timestamp"])
+    beginning = active_beginning(first, str(game_id), match_id, team_ids, fetch)
     # The website endpoint rejects timestamps far beyond an archived game.
     # Query just past the longest expected pro game; completed windows return
     # the terminal tail instead of requiring a separate history endpoint.

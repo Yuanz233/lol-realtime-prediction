@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 from reconcile import reconcile_game
 from finalize_game import finalize
-from import_lolesports_history import collect, detect_pauses
+from import_lolesports_history import active_beginning, collect, detect_pauses
 from datetime import datetime, timezone, timedelta
 from crawl_training_history import candidates
 from schedule_index import completed_matches, league_matches
@@ -135,6 +135,19 @@ class FlowTest(unittest.TestCase):
             self.assertEqual(result["catalog"][0]["tournaments"][0]["stages"][0],
                              {"name": "Finals", "count": 1})
 
+    def test_history_is_sorted_by_played_time_not_import_time(self):
+        with tempfile.TemporaryDirectory() as folder:
+            db_path = str(Path(folder) / "ordered.sqlite3")
+            newer = frame(1200, finished=True)
+            newer["game_id"], newer["match_id"] = 202, 20
+            newer["played_at"] = "2026-09-20T09:00:00Z"
+            save(db_path, normalize(newer), .75, BASELINE["kind"])
+            older = frame(1200, finished=True)
+            older["played_at"] = "2025-11-09T07:00:00Z"
+            save(db_path, normalize(older), .75, BASELINE["kind"])
+            self.assertEqual([item["game_id"] for item in lists(db_path)["history"]],
+                             ["202", "101"])
+
     def test_free_lolesports_collector_waits_then_saves_live_frame(self):
         event = {"id": "9", "type": "match", "state": "unstarted",
                  "startTime": "2026-09-19T09:00:00Z", "league": {"slug": "lpl"},
@@ -194,13 +207,13 @@ class FlowTest(unittest.TestCase):
                                 "gol_first_game": 1000, "games": [
                                     {"winner": "AL", "duration": "30:05"},
                                     {"winner": "IG", "duration": "32:07"}]}]}
-        indexed = candidates(manifest, matches)
+        indexed = candidates(manifest, {"lpl": matches})
         self.assertEqual([(x["game_id"], x["winner_code"], x["label_source"]) for x in indexed],
                          [("101", "AL", "https://gol.gg/game/stats/1000/page-game/"),
                           ("102", "IG", "https://gol.gg/game/stats/1001/page-game/")])
         manifest["series"][0]["games"][1]["winner"] = "AL"
         with self.assertRaisesRegex(ValueError, "disagree with series total"):
-            candidates(manifest, matches)
+            candidates(manifest, {"lpl": matches})
 
     def test_schedule_index_can_select_another_region(self):
         event = {"id": "10", "type": "match", "state": "completed",
@@ -211,6 +224,18 @@ class FlowTest(unittest.TestCase):
         self.assertEqual(set(league_matches(html, "lck")), {"10"})
         with self.assertRaisesRegex(ValueError, "no matching lec matches"):
             league_matches(html, "lec")
+
+    def test_curated_stage_manifest_can_supply_games_missing_from_schedule_page(self):
+        manifest = {"series": [{"league": "worlds", "match_id": "90",
+            "date": "2025-10-15", "teams": ["A", "B"],
+            "team_ids": {"A": "1", "B": "2"}, "series_wins": {"A": 1, "B": 0},
+            "gol_first_game": 700, "official_source": "https://lolesports.com/stage/1",
+            "tournament_name": "2025", "stage_name": "Swiss Round 1",
+            "event_start": "2025-10-15T00:00:00Z",
+            "games": [{"game_id": "91", "winner": "A", "duration": "30:00"}]}]}
+        indexed = candidates(manifest, {"worlds": {}})
+        self.assertEqual((indexed[0]["game_id"], indexed[0]["competition"]["stage_name"]),
+                         ("91", "Swiss Round 1"))
 
     def test_recent_completed_history_discovery_keeps_unlabeled_games(self):
         event = {"id": "9", "type": "match", "state": "completed",
@@ -307,11 +332,28 @@ class FlowTest(unittest.TestCase):
                     "frames": [{"rfc460Timestamp": stamp, "gameState": state}]}
         def fetch(game_id, target):
             elapsed = round((target - beginning).total_seconds())
-            return response(20 if elapsed in (30, 60) else 80)
+            return response(20 if elapsed == 30 else 50 if elapsed == 60 else 80)
         intervals = detect_pauses("101", beginning, 120, 60, "9", {"blue": "1", "red": "2"},
                                   fetch, 0)
         self.assertEqual(len(intervals), 1)
         self.assertEqual(round(intervals[0][1]), 60)
+
+    def test_zero_stat_initialization_is_not_counted_as_game_time(self):
+        raw = datetime(2026, 9, 6, 7, tzinfo=timezone.utc)
+        def frame_at(seconds, gold):
+            return {"rfc460Timestamp": (raw + timedelta(seconds=seconds)).isoformat().replace("+00:00", "Z"),
+                    "gameState": "in_game", "blueTeam": {"totalGold": gold},
+                    "redTeam": {"totalGold": gold}}
+        def response(frames):
+            return {"esportsGameId": "101", "esportsMatchId": "9",
+                    "gameMetadata": {"blueTeamMetadata": {"esportsTeamId": "1"},
+                                     "redTeamMetadata": {"esportsTeamId": "2"}},
+                    "frames": frames}
+        first = response([frame_at(0, 0), frame_at(20, 0)])
+        def fetch(game_id, target):
+            return response([frame_at(35, 2500)])
+        beginning = active_beginning(first, "101", "9", {"blue": "1", "red": "2"}, fetch)
+        self.assertEqual(beginning, raw + timedelta(seconds=35))
 
     def test_live_frame_becomes_historical_curve(self):
         with tempfile.TemporaryDirectory() as folder:

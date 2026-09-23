@@ -1,4 +1,4 @@
-"""Import curated, outcome-verified LPL games from public website frame windows.
+"""Import curated, outcome-verified games from public website frame windows.
 
 The public LoL Esports page supplies game/team IDs. A human-checked manifest
 supplies per-game winners and durations; no winner is inferred from series
@@ -11,7 +11,7 @@ from pathlib import Path
 
 from import_lolesports_history import collect, fetch_window, teams
 from predictor import load_model, predict
-from schedule_index import completed_matches, event_competition, read_schedule
+from schedule_index import event_competition, league_matches, read_schedule
 from storage import game, save
 
 
@@ -22,27 +22,45 @@ def seconds(text):
     return int(minute) * 60 + int(second)
 
 
-def candidates(manifest, events):
+def candidates(manifest, events_by_league):
     seen_games = set()
     result = []
     for series in manifest["series"]:
+        league = str(series.get("league", "lpl")).lower()
         match_id = str(series["match_id"])
-        event = events.get(match_id)
-        if event is None:
-            raise ValueError("match %s missing from completed LPL schedule" % match_id)
-        if event["startTime"][:10] != series["date"]:
-            raise ValueError("match %s date disagrees with verified result" % match_id)
-        team_ids = {}
-        for team in event["matchTeams"]:
-            code = team["code"]
-            team_id = str(team["id"]).split(":")[-1]
-            if code in team_ids or not team_id.isdigit():
-                raise ValueError("match %s has invalid team mapping" % match_id)
-            team_ids[code] = team_id
+        event = events_by_league.get(league, {}).get(match_id)
+        if event is not None:
+            if event["startTime"][:10] != series["date"]:
+                raise ValueError("match %s date disagrees with verified result" % match_id)
+            team_ids = {}
+            for team in event["matchTeams"]:
+                code = team["code"]
+                team_id = str(team["id"]).split(":")[-1]
+                if code in team_ids or not team_id.isdigit():
+                    raise ValueError("match %s has invalid team mapping" % match_id)
+                team_ids[code] = team_id
+            official_games = sorted((g for g in event["match"]["games"]
+                                     if g["state"] == "completed"), key=lambda g: g["number"])
+            published = {team["code"]: (team.get("result") or {}).get("gameWins")
+                         for team in event["matchTeams"]}
+            competition = event_competition(event)
+        else:
+            source = str(series.get("official_source") or "")
+            team_ids = {str(code): str(team_id)
+                        for code, team_id in (series.get("team_ids") or {}).items()}
+            if (not source.startswith("https://lolesports.com/")
+                    or not team_ids or any(not value.isdigit() for value in team_ids.values())):
+                raise ValueError("match %s missing from completed %s schedule" % (match_id, league))
+            official_games = [{"id": label.get("game_id"), "number": number}
+                              for number, label in enumerate(series["games"], 1)]
+            published = {str(code): int(wins)
+                         for code, wins in (series.get("series_wins") or {}).items()}
+            competition = {"league_slug": league, "league_name": league.upper(),
+                           "tournament_name": str(series.get("tournament_name") or "未知赛事"),
+                           "stage_name": str(series.get("stage_name") or "未知阶段"),
+                           "event_start": series.get("event_start")}
         if set(team_ids) != set(series["teams"]) or len(team_ids) != 2:
             raise ValueError("match %s teams disagree with verified result" % match_id)
-        official_games = sorted((g for g in event["match"]["games"]
-                                 if g["state"] == "completed"), key=lambda g: g["number"])
         verified = series["games"]
         if len(official_games) != len(verified):
             raise ValueError("match %s game count differs from verified result" % match_id)
@@ -56,13 +74,12 @@ def candidates(manifest, events):
             seen_games.add(game_id)
             wins[winner] += 1
             result.append({"match_id": match_id, "game_id": game_id, "number": number,
-                           "date": series["date"], "team_ids": team_ids,
-                           "competition": event_competition(event),
+                           "date": series["date"], "league": league, "team_ids": team_ids,
+                           "competition": competition,
                            "winner_code": winner, "duration_seconds": seconds(label["duration"]),
-                           "label_source": "https://gol.gg/game/stats/%d/page-game/" %
+                           "label_source": label.get("label_source") or
+                           "https://gol.gg/game/stats/%d/page-game/" %
                            (series["gol_first_game"] + number - 1)})
-        published = {team["code"]: (team.get("result") or {}).get("gameWins")
-                     for team in event["matchTeams"]}
         if published != wins:
             raise ValueError("match %s manually verified game winners disagree with series total" % match_id)
     return result
@@ -124,14 +141,26 @@ def main():
     if args.workers > 1 and args.max_new_games:
         parser.error("--max-new-games cannot be combined with parallel workers")
     manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
-    html = Path(args.schedule_html).read_text(encoding="utf-8") if args.schedule_html else read_schedule()
-    indexed = candidates(manifest, completed_matches(html))
+    leagues = sorted({str(series.get("league", "lpl")).lower()
+                      for series in manifest["series"]})
+    if args.schedule_html and len(leagues) != 1:
+        parser.error("--schedule-html requires a manifest containing exactly one league")
+    events_by_league = {}
+    for league in leagues:
+        html = (Path(args.schedule_html).read_text(encoding="utf-8")
+                if args.schedule_html else read_schedule(league))
+        events_by_league[league] = league_matches(html, league, ("completed",))
+    indexed = candidates(manifest, events_by_league)
     print("verified manifest: %d single games across %d matches" %
           (len(indexed), len(manifest["series"])), flush=True)
     if args.index_only:
         return
     model = load_model(args.model)
-    report = {"source_page": "https://lolesports.com/en-US/leagues/lpl",
+    report = {"source_pages": ["https://lolesports.com/en-US/leagues/" + league
+                               for league in leagues],
+              "official_sources": sorted({series["official_source"]
+                                          for series in manifest["series"]
+                                          if series.get("official_source")}),
               "manifest": str(args.manifest), "games": [], "errors": []}
     report_path = Path(args.report)
     report_path.parent.mkdir(parents=True, exist_ok=True)

@@ -45,7 +45,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 .\scripts\start-windows.ps1 -Port 8000
 ```
 
-启动脚本优先使用 `.venv\Scripts\python.exe`，绑定 `0.0.0.0:8000`，并启用免费的 LoL Esports 数据源。默认监控 `lpl,lck,lec,vcs`，每30秒保存一个训练/展示点，同时在后台补齐最近结束的比赛。
+启动脚本优先使用 `.venv\Scripts\python.exe`，绑定 `0.0.0.0:8000`，并启用免费的 LoL Esports 数据源。默认监控 `lpl,lck,lec,vcs,worlds`，每30秒保存一个训练/展示点，同时在后台补齐最近结束的比赛。
 
 检查服务：
 

@@ -131,7 +131,10 @@ def lists(db_path, limit=1000):
         rows = db.execute("""SELECT f.* FROM frames f JOIN
             (SELECT game_id, MAX(game_time) last_time FROM frames GROUP BY game_id) latest
             ON f.game_id=latest.game_id AND f.game_time=latest.last_time
-            ORDER BY f.received_at DESC LIMIT ?""", (limit,)).fetchall()
+            ORDER BY COALESCE(json_extract(f.frame_json, '$.played_at'),
+                              f.event_start,
+                              strftime('%Y-%m-%dT%H:%M:%fZ', f.received_at, 'unixepoch')) DESC
+            LIMIT ?""", (limit,)).fetchall()
     items = [_public(r) for r in rows]
     now = time.time()
     live = [i for i in items if not i["finished"] and now - i["received_at"] < 120]

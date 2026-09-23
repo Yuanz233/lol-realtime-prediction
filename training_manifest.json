@@ -1,100 +1,1480 @@
 {
-  "description": "Curated LPL 2026 Grand Finals per-game results. Winners and durations were checked against Games of Legends single-game/series pages; match/game IDs come from the public LoL Esports schedule page. No outcome is inferred from total gold or series score.",
-  "verified_at": "2026-09-16",
+  "description": "Curated LPL 2026 Grand Finals and Worlds 2025 Swiss/knockout per-game results. Winners and durations were checked against Games of Legends single-game/series pages and Oracle's Elixir; match/game/team IDs come from public LoL Esports schedule and tournament-stage pages. No outcome is inferred from total gold or series score.",
+  "verified_at": "2026-09-23",
   "series": [
     {
       "match_id": "117155436343202202",
       "date": "2026-09-13",
-      "teams": ["AL", "BLG"],
+      "teams": [
+        "AL",
+        "BLG"
+      ],
       "gol_first_game": 82967,
       "games": [
-        {"winner": "AL", "duration": "30:07"},
-        {"winner": "AL", "duration": "31:37"},
-        {"winner": "BLG", "duration": "35:26"},
-        {"winner": "AL", "duration": "31:06"}
-      ]
+        {
+          "winner": "AL",
+          "duration": "30:07"
+        },
+        {
+          "winner": "AL",
+          "duration": "31:37"
+        },
+        {
+          "winner": "BLG",
+          "duration": "35:26"
+        },
+        {
+          "winner": "AL",
+          "duration": "31:06"
+        }
+      ],
+      "stage_name": null
     },
     {
       "match_id": "117155436343202196",
       "date": "2026-09-12",
-      "teams": ["AL", "IG"],
+      "teams": [
+        "AL",
+        "IG"
+      ],
       "gol_first_game": 82836,
       "games": [
-        {"winner": "IG", "duration": "37:55"},
-        {"winner": "AL", "duration": "36:26"},
-        {"winner": "AL", "duration": "31:55"},
-        {"winner": "IG", "duration": "29:37"},
-        {"winner": "AL", "duration": "30:11"}
-      ]
+        {
+          "winner": "IG",
+          "duration": "37:55"
+        },
+        {
+          "winner": "AL",
+          "duration": "36:26"
+        },
+        {
+          "winner": "AL",
+          "duration": "31:55"
+        },
+        {
+          "winner": "IG",
+          "duration": "29:37"
+        },
+        {
+          "winner": "AL",
+          "duration": "30:11"
+        }
+      ],
+      "stage_name": null
     },
     {
       "match_id": "117155436343202190",
       "date": "2026-09-08",
-      "teams": ["LGD", "IG"],
+      "teams": [
+        "LGD",
+        "IG"
+      ],
       "gol_first_game": 82793,
       "games": [
-        {"winner": "IG", "duration": "26:58"},
-        {"winner": "IG", "duration": "25:30"},
-        {"winner": "IG", "duration": "27:45"}
-      ]
+        {
+          "winner": "IG",
+          "duration": "26:58"
+        },
+        {
+          "winner": "IG",
+          "duration": "25:30"
+        },
+        {
+          "winner": "IG",
+          "duration": "27:45"
+        }
+      ],
+      "stage_name": null
     },
     {
       "match_id": "117155436343202172",
       "date": "2026-09-07",
-      "teams": ["BLG", "AL"],
+      "teams": [
+        "BLG",
+        "AL"
+      ],
       "gol_first_game": 82725,
       "games": [
-        {"winner": "BLG", "duration": "31:05"},
-        {"winner": "BLG", "duration": "33:00"},
-        {"winner": "BLG", "duration": "24:55"}
-      ]
+        {
+          "winner": "BLG",
+          "duration": "31:05"
+        },
+        {
+          "winner": "BLG",
+          "duration": "33:00"
+        },
+        {
+          "winner": "BLG",
+          "duration": "24:55"
+        }
+      ],
+      "stage_name": null
     },
     {
       "match_id": "117155436343202178",
       "date": "2026-09-06",
-      "teams": ["WE", "IG"],
+      "teams": [
+        "WE",
+        "IG"
+      ],
       "gol_first_game": 82715,
       "games": [
-        {"winner": "IG", "duration": "23:28"},
-        {"winner": "WE", "duration": "31:33"},
-        {"winner": "IG", "duration": "33:45"},
-        {"winner": "IG", "duration": "25:42"}
-      ]
+        {
+          "winner": "IG",
+          "duration": "23:28"
+        },
+        {
+          "winner": "WE",
+          "duration": "31:33"
+        },
+        {
+          "winner": "IG",
+          "duration": "33:45"
+        },
+        {
+          "winner": "IG",
+          "duration": "25:42"
+        }
+      ],
+      "stage_name": null
     },
     {
       "match_id": "117155436343202166",
       "date": "2026-09-05",
-      "teams": ["NIP", "JDG"],
+      "teams": [
+        "NIP",
+        "JDG"
+      ],
       "gol_first_game": 82429,
       "games": [
-        {"winner": "NIP", "duration": "39:42"},
-        {"winner": "NIP", "duration": "32:56"},
-        {"winner": "NIP", "duration": "27:59"}
-      ]
+        {
+          "winner": "NIP",
+          "duration": "39:42"
+        },
+        {
+          "winner": "NIP",
+          "duration": "32:56"
+        },
+        {
+          "winner": "NIP",
+          "duration": "27:59"
+        }
+      ],
+      "stage_name": null
     },
     {
       "match_id": "117155436343202160",
       "date": "2026-09-05",
-      "teams": ["IG", "TES"],
+      "teams": [
+        "IG",
+        "TES"
+      ],
       "gol_first_game": 82424,
       "games": [
-        {"winner": "IG", "duration": "32:16"},
-        {"winner": "TES", "duration": "28:20"},
-        {"winner": "IG", "duration": "42:28"},
-        {"winner": "TES", "duration": "36:14"},
-        {"winner": "IG", "duration": "25:04"}
-      ]
+        {
+          "winner": "IG",
+          "duration": "32:16"
+        },
+        {
+          "winner": "TES",
+          "duration": "28:20"
+        },
+        {
+          "winner": "IG",
+          "duration": "42:28"
+        },
+        {
+          "winner": "TES",
+          "duration": "36:14"
+        },
+        {
+          "winner": "IG",
+          "duration": "25:04"
+        }
+      ],
+      "stage_name": null
     },
     {
       "match_id": "117155436343202154",
       "date": "2026-09-03",
-      "teams": ["WE", "BLG"],
+      "teams": [
+        "WE",
+        "BLG"
+      ],
       "gol_first_game": 82434,
       "games": [
-        {"winner": "BLG", "duration": "29:22"},
-        {"winner": "BLG", "duration": "25:12"},
-        {"winner": "WE", "duration": "33:40"},
-        {"winner": "BLG", "duration": "24:51"}
+        {
+          "winner": "BLG",
+          "duration": "29:22"
+        },
+        {
+          "winner": "BLG",
+          "duration": "25:12"
+        },
+        {
+          "winner": "WE",
+          "duration": "33:40"
+        },
+        {
+          "winner": "BLG",
+          "duration": "24:51"
+        }
+      ],
+      "stage_name": null
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475871523985223",
+      "date": "2025-10-28",
+      "teams": [
+        "HLE",
+        "GEN"
+      ],
+      "gol_first_game": 72952,
+      "games": [
+        {
+          "winner": "GEN",
+          "duration": "33:28"
+        },
+        {
+          "winner": "GEN",
+          "duration": "58:51"
+        },
+        {
+          "winner": "HLE",
+          "duration": "31:45"
+        },
+        {
+          "winner": "GEN",
+          "duration": "32:03"
+        }
+      ],
+      "stage_name": null
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475871523985229",
+      "date": "2025-10-29",
+      "teams": [
+        "CFO",
+        "KT"
+      ],
+      "gol_first_game": 72957,
+      "games": [
+        {
+          "winner": "KT",
+          "duration": "32:51"
+        },
+        {
+          "winner": "KT",
+          "duration": "24:32"
+        },
+        {
+          "winner": "KT",
+          "duration": "29:19"
+        }
+      ],
+      "stage_name": null
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475871523985217",
+      "date": "2025-10-30",
+      "teams": [
+        "G2",
+        "TES"
+      ],
+      "gol_first_game": 72962,
+      "games": [
+        {
+          "winner": "TES",
+          "duration": "30:30"
+        },
+        {
+          "winner": "G2",
+          "duration": "32:24"
+        },
+        {
+          "winner": "TES",
+          "duration": "29:17"
+        },
+        {
+          "winner": "TES",
+          "duration": "29:24"
+        }
+      ],
+      "stage_name": null
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475871523985211",
+      "date": "2025-10-31",
+      "teams": [
+        "T1",
+        "AL"
+      ],
+      "gol_first_game": 72967,
+      "games": [
+        {
+          "winner": "T1",
+          "duration": "36:02"
+        },
+        {
+          "winner": "AL",
+          "duration": "31:33"
+        },
+        {
+          "winner": "AL",
+          "duration": "38:07"
+        },
+        {
+          "winner": "T1",
+          "duration": "36:32"
+        },
+        {
+          "winner": "T1",
+          "duration": "35:15"
+        }
+      ],
+      "stage_name": null
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475871523985241",
+      "date": "2025-11-01",
+      "teams": [
+        "KT",
+        "GEN"
+      ],
+      "gol_first_game": 72972,
+      "games": [
+        {
+          "winner": "KT",
+          "duration": "46:46"
+        },
+        {
+          "winner": "GEN",
+          "duration": "39:08"
+        },
+        {
+          "winner": "KT",
+          "duration": "29:00"
+        },
+        {
+          "winner": "KT",
+          "duration": "35:08"
+        }
+      ],
+      "stage_name": null
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475871523985235",
+      "date": "2025-11-02",
+      "teams": [
+        "TES",
+        "T1"
+      ],
+      "gol_first_game": 72977,
+      "games": [
+        {
+          "winner": "T1",
+          "duration": "30:12"
+        },
+        {
+          "winner": "T1",
+          "duration": "27:10"
+        },
+        {
+          "winner": "T1",
+          "duration": "28:55"
+        }
+      ],
+      "stage_name": null
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475871524050783",
+      "date": "2025-11-09",
+      "teams": [
+        "T1",
+        "KT"
+      ],
+      "gol_first_game": 72980,
+      "games": [
+        {
+          "winner": "T1",
+          "duration": "36:10"
+        },
+        {
+          "winner": "KT",
+          "duration": "42:32"
+        },
+        {
+          "winner": "KT",
+          "duration": "36:52"
+        },
+        {
+          "winner": "T1",
+          "duration": "29:40"
+        },
+        {
+          "winner": "T1",
+          "duration": "36:47"
+        }
+      ],
+      "stage_name": null
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006599034",
+      "date": "2025-10-15",
+      "teams": [
+        "TSW",
+        "VKS"
+      ],
+      "team_ids": {
+        "VKS": "99566408219409348",
+        "TSW": "113661839307879869"
+      },
+      "series_wins": {
+        "TSW": 1,
+        "VKS": 0
+      },
+      "gol_first_game": 72866,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round1",
+      "event_start": "2025-10-15T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006599035",
+          "winner": "TSW",
+          "duration": "33:29"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664572",
+      "date": "2025-10-15",
+      "teams": [
+        "CFO",
+        "FNC"
+      ],
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "FNC": "98767991866488695"
+      },
+      "series_wins": {
+        "CFO": 1,
+        "FNC": 0
+      },
+      "gol_first_game": 72867,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round1",
+      "event_start": "2025-10-15T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664573",
+          "winner": "CFO",
+          "duration": "32:01"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664574",
+      "date": "2025-10-15",
+      "teams": [
+        "KT",
+        "MKOI"
+      ],
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "KT": "99566404579461230"
+      },
+      "series_wins": {
+        "KT": 1,
+        "MKOI": 0
+      },
+      "gol_first_game": 72868,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round1",
+      "event_start": "2025-10-15T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664575",
+          "winner": "KT",
+          "duration": "33:29"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664576",
+      "date": "2025-10-15",
+      "teams": [
+        "100T",
+        "BLG"
+      ],
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "100T": "99294153828264740"
+      },
+      "series_wins": {
+        "BLG": 0,
+        "100T": 1
+      },
+      "gol_first_game": 72869,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round1",
+      "event_start": "2025-10-15T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664577",
+          "winner": "100T",
+          "duration": "31:10"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664578",
+      "date": "2025-10-15",
+      "teams": [
+        "FLY",
+        "T1"
+      ],
+      "team_ids": {
+        "FLY": "98926509892121852",
+        "T1": "98767991853197861"
+      },
+      "series_wins": {
+        "FLY": 0,
+        "T1": 1
+      },
+      "gol_first_game": 72870,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round1",
+      "event_start": "2025-10-15T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664579",
+          "winner": "T1",
+          "duration": "34:26"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664580",
+      "date": "2025-10-15",
+      "teams": [
+        "AL",
+        "HLE"
+      ],
+      "team_ids": {
+        "HLE": "100205573496804586",
+        "AL": "99566404856367466"
+      },
+      "series_wins": {
+        "HLE": 0,
+        "AL": 1
+      },
+      "gol_first_game": 72871,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round1",
+      "event_start": "2025-10-15T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664581",
+          "winner": "AL",
+          "duration": "41:14"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664582",
+      "date": "2025-10-15",
+      "teams": [
+        "G2",
+        "TES"
+      ],
+      "team_ids": {
+        "G2": "98767991926151025",
+        "TES": "99566404854685458"
+      },
+      "series_wins": {
+        "G2": 0,
+        "TES": 1
+      },
+      "gol_first_game": 72872,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round1",
+      "event_start": "2025-10-15T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664583",
+          "winner": "TES",
+          "duration": "32:25"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664584",
+      "date": "2025-10-15",
+      "teams": [
+        "GEN",
+        "PSG"
+      ],
+      "team_ids": {
+        "GEN": "100205573495116443",
+        "PSG": "104367068120825486"
+      },
+      "series_wins": {
+        "GEN": 1,
+        "PSG": 0
+      },
+      "gol_first_game": 72873,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round1",
+      "event_start": "2025-10-15T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664585",
+          "winner": "GEN",
+          "duration": "27:22"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664586",
+      "date": "2025-10-16",
+      "teams": [
+        "KT",
+        "TSW"
+      ],
+      "team_ids": {
+        "TSW": "113661839307879869",
+        "KT": "99566404579461230"
+      },
+      "series_wins": {
+        "KT": 1,
+        "TSW": 0
+      },
+      "gol_first_game": 72875,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round2",
+      "event_start": "2025-10-16T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664587",
+          "winner": "KT",
+          "duration": "28:06"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664588",
+      "date": "2025-10-16",
+      "teams": [
+        "100T",
+        "TES"
+      ],
+      "team_ids": {
+        "TES": "99566404854685458",
+        "100T": "99294153828264740"
+      },
+      "series_wins": {
+        "TES": 1,
+        "100T": 0
+      },
+      "gol_first_game": 72877,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round2",
+      "event_start": "2025-10-16T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664589",
+          "winner": "TES",
+          "duration": "26:20"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664590",
+      "date": "2025-10-16",
+      "teams": [
+        "CFO",
+        "T1"
+      ],
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "T1": "98767991853197861"
+      },
+      "series_wins": {
+        "CFO": 1,
+        "T1": 0
+      },
+      "gol_first_game": 72878,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round2",
+      "event_start": "2025-10-16T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664591",
+          "winner": "CFO",
+          "duration": "32:22"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664592",
+      "date": "2025-10-16",
+      "teams": [
+        "AL",
+        "GEN"
+      ],
+      "team_ids": {
+        "GEN": "100205573495116443",
+        "AL": "99566404856367466"
+      },
+      "series_wins": {
+        "GEN": 0,
+        "AL": 1
+      },
+      "gol_first_game": 72879,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round2",
+      "event_start": "2025-10-16T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664593",
+          "winner": "AL",
+          "duration": "32:15"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664594",
+      "date": "2025-10-16",
+      "teams": [
+        "FLY",
+        "VKS"
+      ],
+      "team_ids": {
+        "FLY": "98926509892121852",
+        "VKS": "99566408219409348"
+      },
+      "series_wins": {
+        "VKS": 0,
+        "FLY": 1
+      },
+      "gol_first_game": 72874,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round2",
+      "event_start": "2025-10-16T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664595",
+          "winner": "FLY",
+          "duration": "31:18"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664596",
+      "date": "2025-10-16",
+      "teams": [
+        "G2",
+        "MKOI"
+      ],
+      "team_ids": {
+        "G2": "98767991926151025",
+        "MKOI": "103461966965149786"
+      },
+      "series_wins": {
+        "MKOI": 0,
+        "G2": 1
+      },
+      "gol_first_game": 72876,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round2",
+      "event_start": "2025-10-16T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664597",
+          "winner": "G2",
+          "duration": "28:21"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664598",
+      "date": "2025-10-16",
+      "teams": [
+        "BLG",
+        "FNC"
+      ],
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "FNC": "98767991866488695"
+      },
+      "series_wins": {
+        "BLG": 1,
+        "FNC": 0
+      },
+      "gol_first_game": 72880,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round2",
+      "event_start": "2025-10-16T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664599",
+          "winner": "BLG",
+          "duration": "27:53"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664600",
+      "date": "2025-10-16",
+      "teams": [
+        "HLE",
+        "PSG"
+      ],
+      "team_ids": {
+        "HLE": "100205573496804586",
+        "PSG": "104367068120825486"
+      },
+      "series_wins": {
+        "HLE": 1,
+        "PSG": 0
+      },
+      "gol_first_game": 72881,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round2",
+      "event_start": "2025-10-16T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664601",
+          "winner": "HLE",
+          "duration": "28:13"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664602",
+      "date": "2025-10-17",
+      "teams": [
+        "KT",
+        "TES"
+      ],
+      "team_ids": {
+        "KT": "99566404579461230",
+        "TES": "99566404854685458"
+      },
+      "series_wins": {
+        "KT": 2,
+        "TES": 0
+      },
+      "gol_first_game": 72885,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round3",
+      "event_start": "2025-10-17T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664603",
+          "winner": "KT",
+          "duration": "32:59"
+        },
+        {
+          "game_id": "113475798006664604",
+          "winner": "KT",
+          "duration": "29:20"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664606",
+      "date": "2025-10-17",
+      "teams": [
+        "AL",
+        "CFO"
+      ],
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "AL": "99566404856367466"
+      },
+      "series_wins": {
+        "CFO": 1,
+        "AL": 2
+      },
+      "gol_first_game": 72882,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round3",
+      "event_start": "2025-10-17T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664607",
+          "winner": "CFO",
+          "duration": "38:23"
+        },
+        {
+          "game_id": "113475798006664608",
+          "winner": "AL",
+          "duration": "30:10"
+        },
+        {
+          "game_id": "113475798006664609",
+          "winner": "AL",
+          "duration": "29:51"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664610",
+      "date": "2025-10-18",
+      "teams": [
+        "FLY",
+        "TSW"
+      ],
+      "team_ids": {
+        "FLY": "98926509892121852",
+        "TSW": "113661839307879869"
+      },
+      "series_wins": {
+        "FLY": 1,
+        "TSW": 0
+      },
+      "gol_first_game": 72890,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round3",
+      "event_start": "2025-10-18T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664611",
+          "winner": "FLY",
+          "duration": "32:17"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664612",
+      "date": "2025-10-18",
+      "teams": [
+        "GEN",
+        "T1"
+      ],
+      "team_ids": {
+        "GEN": "100205573495116443",
+        "T1": "98767991853197861"
+      },
+      "series_wins": {
+        "GEN": 1,
+        "T1": 0
+      },
+      "gol_first_game": 72889,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round3",
+      "event_start": "2025-10-18T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664613",
+          "winner": "GEN",
+          "duration": "27:43"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664614",
+      "date": "2025-10-18",
+      "teams": [
+        "BLG",
+        "G2"
+      ],
+      "team_ids": {
+        "G2": "98767991926151025",
+        "BLG": "99566404853854212"
+      },
+      "series_wins": {
+        "BLG": 0,
+        "G2": 1
+      },
+      "gol_first_game": 72888,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round3",
+      "event_start": "2025-10-18T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664615",
+          "winner": "G2",
+          "duration": "28:03"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664616",
+      "date": "2025-10-18",
+      "teams": [
+        "100T",
+        "HLE"
+      ],
+      "team_ids": {
+        "HLE": "100205573496804586",
+        "100T": "99294153828264740"
+      },
+      "series_wins": {
+        "HLE": 1,
+        "100T": 0
+      },
+      "gol_first_game": 72891,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round3",
+      "event_start": "2025-10-18T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664617",
+          "winner": "HLE",
+          "duration": "24:50"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664618",
+      "date": "2025-10-19",
+      "teams": [
+        "FNC",
+        "MKOI"
+      ],
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "FNC": "98767991866488695"
+      },
+      "series_wins": {
+        "MKOI": 2,
+        "FNC": 1
+      },
+      "gol_first_game": 72895,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round3",
+      "event_start": "2025-10-19T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664619",
+          "winner": "MKOI",
+          "duration": "27:00"
+        },
+        {
+          "game_id": "113475798006664620",
+          "winner": "FNC",
+          "duration": "26:46"
+        },
+        {
+          "game_id": "113475798006664621",
+          "winner": "MKOI",
+          "duration": "28:58"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664622",
+      "date": "2025-10-19",
+      "teams": [
+        "PSG",
+        "VKS"
+      ],
+      "team_ids": {
+        "VKS": "99566408219409348",
+        "PSG": "104367068120825486"
+      },
+      "series_wins": {
+        "PSG": 1,
+        "VKS": 2
+      },
+      "gol_first_game": 72892,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round3",
+      "event_start": "2025-10-19T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664623",
+          "winner": "VKS",
+          "duration": "25:34"
+        },
+        {
+          "game_id": "113475798006664624",
+          "winner": "PSG",
+          "duration": "34:18"
+        },
+        {
+          "game_id": "113475798006664625",
+          "winner": "VKS",
+          "duration": "34:33"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664626",
+      "date": "2025-10-22",
+      "teams": [
+        "CFO",
+        "HLE"
+      ],
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "HLE": "100205573496804586"
+      },
+      "series_wins": {
+        "CFO": 0,
+        "HLE": 2
+      },
+      "gol_first_game": 72915,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round4",
+      "event_start": "2025-10-22T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664627",
+          "winner": "HLE",
+          "duration": "31:23"
+        },
+        {
+          "game_id": "113475798006664628",
+          "winner": "HLE",
+          "duration": "34:41"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664630",
+      "date": "2025-10-22",
+      "teams": [
+        "FLY",
+        "G2"
+      ],
+      "team_ids": {
+        "G2": "98767991926151025",
+        "FLY": "98926509892121852"
+      },
+      "series_wins": {
+        "FLY": 1,
+        "G2": 2
+      },
+      "gol_first_game": 72918,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round4",
+      "event_start": "2025-10-22T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664631",
+          "winner": "FLY",
+          "duration": "38:08"
+        },
+        {
+          "game_id": "113475798006664632",
+          "winner": "G2",
+          "duration": "31:34"
+        },
+        {
+          "game_id": "113475798006664633",
+          "winner": "G2",
+          "duration": "34:43"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664634",
+      "date": "2025-10-23",
+      "teams": [
+        "GEN",
+        "TES"
+      ],
+      "team_ids": {
+        "GEN": "100205573495116443",
+        "TES": "99566404854685458"
+      },
+      "series_wins": {
+        "GEN": 2,
+        "TES": 0
+      },
+      "gol_first_game": 72924,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round4",
+      "event_start": "2025-10-23T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664635",
+          "winner": "GEN",
+          "duration": "24:55"
+        },
+        {
+          "game_id": "113475798006664636",
+          "winner": "GEN",
+          "duration": "29:27"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664638",
+      "date": "2025-10-23",
+      "teams": [
+        "MKOI",
+        "TSW"
+      ],
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "TSW": "113661839307879869"
+      },
+      "series_wins": {
+        "MKOI": 2,
+        "TSW": 1
+      },
+      "gol_first_game": 72921,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round4",
+      "event_start": "2025-10-23T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664639",
+          "winner": "TSW",
+          "duration": "34:35"
+        },
+        {
+          "game_id": "113475798006664640",
+          "winner": "MKOI",
+          "duration": "35:16"
+        },
+        {
+          "game_id": "113475798006664641",
+          "winner": "MKOI",
+          "duration": "29:25"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664642",
+      "date": "2025-10-24",
+      "teams": [
+        "BLG",
+        "VKS"
+      ],
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "VKS": "99566408219409348"
+      },
+      "series_wins": {
+        "BLG": 2,
+        "VKS": 0
+      },
+      "gol_first_game": 72927,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round4",
+      "event_start": "2025-10-24T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664643",
+          "winner": "BLG",
+          "duration": "29:54"
+        },
+        {
+          "game_id": "113475798006664644",
+          "winner": "BLG",
+          "duration": "43:51"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664646",
+      "date": "2025-10-24",
+      "teams": [
+        "100T",
+        "T1"
+      ],
+      "team_ids": {
+        "100T": "99294153828264740",
+        "T1": "98767991853197861"
+      },
+      "series_wins": {
+        "100T": 0,
+        "T1": 2
+      },
+      "gol_first_game": 72930,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round4",
+      "event_start": "2025-10-24T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664647",
+          "winner": "T1",
+          "duration": "41:35"
+        },
+        {
+          "game_id": "113475798006664648",
+          "winner": "T1",
+          "duration": "30:01"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664650",
+      "date": "2025-10-25",
+      "teams": [
+        "CFO",
+        "FLY"
+      ],
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "FLY": "98926509892121852"
+      },
+      "series_wins": {
+        "CFO": 2,
+        "FLY": 0
+      },
+      "gol_first_game": 72944,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round5",
+      "event_start": "2025-10-25T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664651",
+          "winner": "CFO",
+          "duration": "45:08"
+        },
+        {
+          "game_id": "113475798006664652",
+          "winner": "CFO",
+          "duration": "27:11"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664654",
+      "date": "2025-10-25",
+      "teams": [
+        "BLG",
+        "TES"
+      ],
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "TES": "99566404854685458"
+      },
+      "series_wins": {
+        "TES": 2,
+        "BLG": 1
+      },
+      "gol_first_game": 72947,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round5",
+      "event_start": "2025-10-25T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664655",
+          "winner": "BLG",
+          "duration": "28:19"
+        },
+        {
+          "game_id": "113475798006664656",
+          "winner": "TES",
+          "duration": "28:37"
+        },
+        {
+          "game_id": "113475798006664657",
+          "winner": "TES",
+          "duration": "35:53"
+        }
+      ]
+    },
+    {
+      "league": "worlds",
+      "match_id": "113475798006664658",
+      "date": "2025-10-25",
+      "teams": [
+        "MKOI",
+        "T1"
+      ],
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "T1": "98767991853197861"
+      },
+      "series_wins": {
+        "MKOI": 0,
+        "T1": 2
+      },
+      "gol_first_game": 72950,
+      "official_source": "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049",
+      "tournament_name": "2025",
+      "stage_name": "Swiss Round5",
+      "event_start": "2025-10-25T00:00:00Z",
+      "games": [
+        {
+          "game_id": "113475798006664659",
+          "winner": "T1",
+          "duration": "32:54"
+        },
+        {
+          "game_id": "113475798006664660",
+          "winner": "T1",
+          "duration": "41:19"
+        }
       ]
     }
   ]

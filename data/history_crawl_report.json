@@ -1,5 +1,11 @@
 {
-  "source_page": "https://lolesports.com/en-US/leagues/lpl",
+  "source_pages": [
+    "https://lolesports.com/en-US/leagues/lpl",
+    "https://lolesports.com/en-US/leagues/worlds"
+  ],
+  "official_sources": [
+    "https://lolesports.com/en-US/tournament/113475452383887518/stage/113475482880934049"
+  ],
   "manifest": "/Users/yuanze/projects/lol-realtime-prediction/training_manifest.json",
   "games": [
     {
@@ -7,508 +13,2760 @@
       "game_id": "117155436343202203",
       "number": 1,
       "date": "2026-09-13",
+      "league": "lpl",
       "team_ids": {
         "AL": "99566404856367466",
         "BLG": "99566404853854212"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Finals",
+        "event_start": "2026-09-13T09:00:00Z"
       },
       "winner_code": "AL",
       "duration_seconds": 1807,
       "label_source": "https://gol.gg/game/stats/82967/page-game/",
       "status": "skipped",
-      "points": 31
+      "points": 61
     },
     {
       "match_id": "117155436343202202",
       "game_id": "117155436343202204",
       "number": 2,
       "date": "2026-09-13",
+      "league": "lpl",
       "team_ids": {
         "AL": "99566404856367466",
         "BLG": "99566404853854212"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Finals",
+        "event_start": "2026-09-13T09:00:00Z"
       },
       "winner_code": "AL",
       "duration_seconds": 1897,
       "label_source": "https://gol.gg/game/stats/82968/page-game/",
       "status": "skipped",
-      "points": 16
+      "points": 64
     },
     {
       "match_id": "117155436343202202",
       "game_id": "117155436343202205",
       "number": 3,
       "date": "2026-09-13",
+      "league": "lpl",
       "team_ids": {
         "AL": "99566404856367466",
         "BLG": "99566404853854212"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Finals",
+        "event_start": "2026-09-13T09:00:00Z"
       },
       "winner_code": "BLG",
       "duration_seconds": 2126,
       "label_source": "https://gol.gg/game/stats/82969/page-game/",
       "status": "skipped",
-      "points": 18
+      "points": 71
     },
     {
       "match_id": "117155436343202202",
       "game_id": "117155436343202206",
       "number": 4,
       "date": "2026-09-13",
+      "league": "lpl",
       "team_ids": {
         "AL": "99566404856367466",
         "BLG": "99566404853854212"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Finals",
+        "event_start": "2026-09-13T09:00:00Z"
       },
       "winner_code": "AL",
       "duration_seconds": 1866,
       "label_source": "https://gol.gg/game/stats/82970/page-game/",
       "status": "skipped",
-      "points": 16
+      "points": 63
     },
     {
       "match_id": "117155436343202196",
       "game_id": "117155436343202197",
       "number": 1,
       "date": "2026-09-12",
+      "league": "lpl",
       "team_ids": {
         "IG": "99566404848691211",
         "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-12T09:00:00Z"
       },
       "winner_code": "IG",
       "duration_seconds": 2275,
       "label_source": "https://gol.gg/game/stats/82836/page-game/",
       "status": "skipped",
-      "points": 19
-    },
-    {
-      "match_id": "117155436343202196",
-      "game_id": "117155436343202198",
-      "number": 2,
-      "date": "2026-09-12",
-      "team_ids": {
-        "IG": "99566404848691211",
-        "AL": "99566404856367466"
-      },
-      "winner_code": "AL",
-      "duration_seconds": 2186,
-      "label_source": "https://gol.gg/game/stats/82837/page-game/",
-      "status": "skipped",
-      "points": 19
+      "points": 76
     },
     {
       "match_id": "117155436343202196",
       "game_id": "117155436343202199",
       "number": 3,
       "date": "2026-09-12",
+      "league": "lpl",
       "team_ids": {
         "IG": "99566404848691211",
         "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-12T09:00:00Z"
       },
       "winner_code": "AL",
       "duration_seconds": 1915,
       "label_source": "https://gol.gg/game/stats/82838/page-game/",
       "status": "skipped",
-      "points": 16
+      "points": 64
     },
     {
       "match_id": "117155436343202196",
-      "game_id": "117155436343202200",
-      "number": 4,
+      "game_id": "117155436343202198",
+      "number": 2,
       "date": "2026-09-12",
+      "league": "lpl",
       "team_ids": {
         "IG": "99566404848691211",
         "AL": "99566404856367466"
       },
-      "winner_code": "IG",
-      "duration_seconds": 1777,
-      "label_source": "https://gol.gg/game/stats/82839/page-game/",
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-12T09:00:00Z"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 2186,
+      "label_source": "https://gol.gg/game/stats/82837/page-game/",
       "status": "skipped",
-      "points": 15
+      "points": 73
     },
     {
       "match_id": "117155436343202196",
       "game_id": "117155436343202201",
       "number": 5,
       "date": "2026-09-12",
+      "league": "lpl",
       "team_ids": {
         "IG": "99566404848691211",
         "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-12T09:00:00Z"
       },
       "winner_code": "AL",
       "duration_seconds": 1811,
       "label_source": "https://gol.gg/game/stats/82840/page-game/",
       "status": "skipped",
-      "points": 16
+      "points": 61
     },
     {
       "match_id": "117155436343202190",
       "game_id": "117155436343202191",
       "number": 1,
       "date": "2026-09-08",
+      "league": "lpl",
       "team_ids": {
         "LGD": "99566404846951820",
         "IG": "99566404848691211"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-08T09:00:00Z"
       },
       "winner_code": "IG",
       "duration_seconds": 1618,
       "label_source": "https://gol.gg/game/stats/82793/page-game/",
       "status": "skipped",
-      "points": 14
+      "points": 55
+    },
+    {
+      "match_id": "117155436343202196",
+      "game_id": "117155436343202200",
+      "number": 4,
+      "date": "2026-09-12",
+      "league": "lpl",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-12T09:00:00Z"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 1777,
+      "label_source": "https://gol.gg/game/stats/82839/page-game/",
+      "status": "skipped",
+      "points": 60
     },
     {
       "match_id": "117155436343202190",
       "game_id": "117155436343202192",
       "number": 2,
       "date": "2026-09-08",
+      "league": "lpl",
       "team_ids": {
         "LGD": "99566404846951820",
         "IG": "99566404848691211"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-08T09:00:00Z"
       },
       "winner_code": "IG",
       "duration_seconds": 1530,
       "label_source": "https://gol.gg/game/stats/82794/page-game/",
       "status": "skipped",
-      "points": 13
+      "points": 52
     },
     {
       "match_id": "117155436343202190",
       "game_id": "117155436343202193",
       "number": 3,
       "date": "2026-09-08",
+      "league": "lpl",
       "team_ids": {
         "LGD": "99566404846951820",
         "IG": "99566404848691211"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-08T09:00:00Z"
       },
       "winner_code": "IG",
       "duration_seconds": 1665,
       "label_source": "https://gol.gg/game/stats/82795/page-game/",
       "status": "skipped",
-      "points": 14
+      "points": 56
     },
     {
       "match_id": "117155436343202172",
       "game_id": "117155436343202173",
       "number": 1,
       "date": "2026-09-07",
+      "league": "lpl",
       "team_ids": {
         "BLG": "99566404853854212",
         "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-07T09:00:00Z"
       },
       "winner_code": "BLG",
       "duration_seconds": 1865,
       "label_source": "https://gol.gg/game/stats/82725/page-game/",
       "status": "skipped",
-      "points": 16
+      "points": 63
     },
     {
       "match_id": "117155436343202172",
       "game_id": "117155436343202174",
       "number": 2,
       "date": "2026-09-07",
+      "league": "lpl",
       "team_ids": {
         "BLG": "99566404853854212",
         "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-07T09:00:00Z"
       },
       "winner_code": "BLG",
       "duration_seconds": 1980,
       "label_source": "https://gol.gg/game/stats/82726/page-game/",
       "status": "skipped",
-      "points": 17
-    },
-    {
-      "match_id": "117155436343202172",
-      "game_id": "117155436343202175",
-      "number": 3,
-      "date": "2026-09-07",
-      "team_ids": {
-        "BLG": "99566404853854212",
-        "AL": "99566404856367466"
-      },
-      "winner_code": "BLG",
-      "duration_seconds": 1495,
-      "label_source": "https://gol.gg/game/stats/82727/page-game/",
-      "status": "skipped",
-      "points": 13
+      "points": 67
     },
     {
       "match_id": "117155436343202178",
       "game_id": "117155436343202179",
       "number": 1,
       "date": "2026-09-06",
+      "league": "lpl",
       "team_ids": {
         "WE": "98767991887166787",
         "IG": "99566404848691211"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-06T06:00:00Z"
       },
       "winner_code": "IG",
       "duration_seconds": 1408,
       "label_source": "https://gol.gg/game/stats/82715/page-game/",
       "status": "skipped",
-      "points": 12
+      "points": 48
     },
     {
-      "match_id": "117155436343202178",
-      "game_id": "117155436343202180",
-      "number": 2,
-      "date": "2026-09-06",
-      "team_ids": {
-        "WE": "98767991887166787",
-        "IG": "99566404848691211"
-      },
-      "winner_code": "WE",
-      "duration_seconds": 1893,
-      "label_source": "https://gol.gg/game/stats/82716/page-game/",
-      "status": "imported",
-      "points": 17,
-      "winner_side": "blue",
-      "actual_duration_seconds": 1899,
-      "pause_adjusted_seconds": 71,
-      "outcome_reconciled": false
-    },
-    {
-      "match_id": "117155436343202178",
-      "game_id": "117155436343202181",
+      "match_id": "117155436343202172",
+      "game_id": "117155436343202175",
       "number": 3,
-      "date": "2026-09-06",
+      "date": "2026-09-07",
+      "league": "lpl",
       "team_ids": {
-        "WE": "98767991887166787",
-        "IG": "99566404848691211"
+        "BLG": "99566404853854212",
+        "AL": "99566404856367466"
       },
-      "winner_code": "IG",
-      "duration_seconds": 2025,
-      "label_source": "https://gol.gg/game/stats/82717/page-game/",
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-07T09:00:00Z"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 1495,
+      "label_source": "https://gol.gg/game/stats/82727/page-game/",
       "status": "skipped",
-      "points": 17
+      "points": 50
     },
     {
       "match_id": "117155436343202178",
       "game_id": "117155436343202182",
       "number": 4,
       "date": "2026-09-06",
+      "league": "lpl",
       "team_ids": {
         "WE": "98767991887166787",
         "IG": "99566404848691211"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-06T06:00:00Z"
       },
       "winner_code": "IG",
       "duration_seconds": 1542,
       "label_source": "https://gol.gg/game/stats/82718/page-game/",
       "status": "skipped",
-      "points": 13
+      "points": 52
+    },
+    {
+      "match_id": "117155436343202178",
+      "game_id": "117155436343202180",
+      "number": 2,
+      "date": "2026-09-06",
+      "league": "lpl",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "IG": "99566404848691211"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-06T06:00:00Z"
+      },
+      "winner_code": "WE",
+      "duration_seconds": 1893,
+      "label_source": "https://gol.gg/game/stats/82716/page-game/",
+      "status": "skipped",
+      "points": 64
+    },
+    {
+      "match_id": "117155436343202178",
+      "game_id": "117155436343202181",
+      "number": 3,
+      "date": "2026-09-06",
+      "league": "lpl",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "IG": "99566404848691211"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-06T06:00:00Z"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 2025,
+      "label_source": "https://gol.gg/game/stats/82717/page-game/",
+      "status": "skipped",
+      "points": 68
     },
     {
       "match_id": "117155436343202166",
       "game_id": "117155436343202167",
       "number": 1,
       "date": "2026-09-05",
+      "league": "lpl",
       "team_ids": {
         "NIP": "101388912914513220",
         "JDG": "99566404852189289"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-05T09:00:00Z"
       },
       "winner_code": "NIP",
       "duration_seconds": 2382,
       "label_source": "https://gol.gg/game/stats/82429/page-game/",
-      "status": "imported",
-      "points": 20,
-      "winner_side": "red",
-      "actual_duration_seconds": 2383,
-      "pause_adjusted_seconds": 0,
-      "outcome_reconciled": true
-    },
-    {
-      "match_id": "117155436343202166",
-      "game_id": "117155436343202168",
-      "number": 2,
-      "date": "2026-09-05",
-      "team_ids": {
-        "NIP": "101388912914513220",
-        "JDG": "99566404852189289"
-      },
-      "winner_code": "NIP",
-      "duration_seconds": 1976,
-      "label_source": "https://gol.gg/game/stats/82430/page-game/",
       "status": "skipped",
-      "points": 17
+      "points": 80
     },
     {
       "match_id": "117155436343202166",
       "game_id": "117155436343202169",
       "number": 3,
       "date": "2026-09-05",
+      "league": "lpl",
       "team_ids": {
         "NIP": "101388912914513220",
         "JDG": "99566404852189289"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-05T09:00:00Z"
       },
       "winner_code": "NIP",
       "duration_seconds": 1679,
       "label_source": "https://gol.gg/game/stats/82431/page-game/",
       "status": "skipped",
-      "points": 15
+      "points": 57
+    },
+    {
+      "match_id": "117155436343202166",
+      "game_id": "117155436343202168",
+      "number": 2,
+      "date": "2026-09-05",
+      "league": "lpl",
+      "team_ids": {
+        "NIP": "101388912914513220",
+        "JDG": "99566404852189289"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-05T09:00:00Z"
+      },
+      "winner_code": "NIP",
+      "duration_seconds": 1976,
+      "label_source": "https://gol.gg/game/stats/82430/page-game/",
+      "status": "skipped",
+      "points": 66
     },
     {
       "match_id": "117155436343202160",
       "game_id": "117155436343202161",
       "number": 1,
       "date": "2026-09-05",
+      "league": "lpl",
       "team_ids": {
         "IG": "99566404848691211",
         "TES": "99566404854685458"
       },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-05T06:00:00Z"
+      },
       "winner_code": "IG",
       "duration_seconds": 1936,
       "label_source": "https://gol.gg/game/stats/82424/page-game/",
-      "status": "imported",
-      "points": 17,
-      "winner_side": "red",
-      "actual_duration_seconds": 1941,
-      "pause_adjusted_seconds": 0,
-      "outcome_reconciled": false
+      "status": "skipped",
+      "points": 65
     },
     {
       "match_id": "117155436343202160",
       "game_id": "117155436343202162",
       "number": 2,
       "date": "2026-09-05",
+      "league": "lpl",
       "team_ids": {
         "IG": "99566404848691211",
         "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-05T06:00:00Z"
       },
       "winner_code": "TES",
       "duration_seconds": 1700,
       "label_source": "https://gol.gg/game/stats/82425/page-game/",
-      "status": "imported",
-      "points": 15,
-      "winner_side": "red",
-      "actual_duration_seconds": 1708,
-      "pause_adjusted_seconds": 0,
-      "outcome_reconciled": false
-    },
-    {
-      "match_id": "117155436343202160",
-      "game_id": "117155436343202163",
-      "number": 3,
-      "date": "2026-09-05",
-      "team_ids": {
-        "IG": "99566404848691211",
-        "TES": "99566404854685458"
-      },
-      "winner_code": "IG",
-      "duration_seconds": 2548,
-      "label_source": "https://gol.gg/game/stats/82426/page-game/",
-      "status": "imported",
-      "points": 22,
-      "winner_side": "blue",
-      "actual_duration_seconds": 2553,
-      "pause_adjusted_seconds": 0,
-      "outcome_reconciled": false
-    },
-    {
-      "match_id": "117155436343202160",
-      "game_id": "117155436343202164",
-      "number": 4,
-      "date": "2026-09-05",
-      "team_ids": {
-        "IG": "99566404848691211",
-        "TES": "99566404854685458"
-      },
-      "winner_code": "TES",
-      "duration_seconds": 2174,
-      "label_source": "https://gol.gg/game/stats/82427/page-game/",
-      "status": "imported",
-      "points": 19,
-      "winner_side": "red",
-      "actual_duration_seconds": 2179,
-      "pause_adjusted_seconds": 0,
-      "outcome_reconciled": false
+      "status": "skipped",
+      "points": 57
     },
     {
       "match_id": "117155436343202160",
       "game_id": "117155436343202165",
       "number": 5,
       "date": "2026-09-05",
+      "league": "lpl",
       "team_ids": {
         "IG": "99566404848691211",
         "TES": "99566404854685458"
       },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-05T06:00:00Z"
+      },
       "winner_code": "IG",
       "duration_seconds": 1504,
       "label_source": "https://gol.gg/game/stats/82428/page-game/",
-      "status": "imported",
-      "points": 13,
-      "winner_side": "red",
-      "actual_duration_seconds": 1510,
-      "pause_adjusted_seconds": 0,
-      "outcome_reconciled": false
+      "status": "skipped",
+      "points": 51
+    },
+    {
+      "match_id": "117155436343202160",
+      "game_id": "117155436343202164",
+      "number": 4,
+      "date": "2026-09-05",
+      "league": "lpl",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-05T06:00:00Z"
+      },
+      "winner_code": "TES",
+      "duration_seconds": 2174,
+      "label_source": "https://gol.gg/game/stats/82427/page-game/",
+      "status": "skipped",
+      "points": 73
+    },
+    {
+      "match_id": "117155436343202160",
+      "game_id": "117155436343202163",
+      "number": 3,
+      "date": "2026-09-05",
+      "league": "lpl",
+      "team_ids": {
+        "IG": "99566404848691211",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-05T06:00:00Z"
+      },
+      "winner_code": "IG",
+      "duration_seconds": 2548,
+      "label_source": "https://gol.gg/game/stats/82426/page-game/",
+      "status": "skipped",
+      "points": 86
     },
     {
       "match_id": "117155436343202154",
       "game_id": "117155436343202155",
       "number": 1,
       "date": "2026-09-03",
+      "league": "lpl",
       "team_ids": {
         "WE": "98767991887166787",
         "BLG": "99566404853854212"
       },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-03T09:00:00Z"
+      },
       "winner_code": "BLG",
       "duration_seconds": 1762,
       "label_source": "https://gol.gg/game/stats/82434/page-game/",
-      "status": "imported",
-      "points": 15,
-      "winner_side": "blue",
-      "actual_duration_seconds": 1767,
-      "pause_adjusted_seconds": 0,
-      "outcome_reconciled": false
+      "status": "skipped",
+      "points": 59
     },
     {
       "match_id": "117155436343202154",
       "game_id": "117155436343202156",
       "number": 2,
       "date": "2026-09-03",
+      "league": "lpl",
       "team_ids": {
         "WE": "98767991887166787",
         "BLG": "99566404853854212"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-03T09:00:00Z"
       },
       "winner_code": "BLG",
       "duration_seconds": 1512,
       "label_source": "https://gol.gg/game/stats/82435/page-game/",
-      "status": "imported",
-      "points": 13,
-      "winner_side": "blue",
-      "actual_duration_seconds": 1518,
-      "pause_adjusted_seconds": 0,
-      "outcome_reconciled": false
-    },
-    {
-      "match_id": "117155436343202154",
-      "game_id": "117155436343202157",
-      "number": 3,
-      "date": "2026-09-03",
-      "team_ids": {
-        "WE": "98767991887166787",
-        "BLG": "99566404853854212"
-      },
-      "winner_code": "WE",
-      "duration_seconds": 2020,
-      "label_source": "https://gol.gg/game/stats/82436/page-game/",
-      "status": "imported",
-      "points": 17,
-      "winner_side": "red",
-      "actual_duration_seconds": 2025,
-      "pause_adjusted_seconds": 0,
-      "outcome_reconciled": false
+      "status": "skipped",
+      "points": 51
     },
     {
       "match_id": "117155436343202154",
       "game_id": "117155436343202158",
       "number": 4,
       "date": "2026-09-03",
+      "league": "lpl",
       "team_ids": {
         "WE": "98767991887166787",
         "BLG": "99566404853854212"
       },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-03T09:00:00Z"
+      },
       "winner_code": "BLG",
       "duration_seconds": 1491,
       "label_source": "https://gol.gg/game/stats/82437/page-game/",
+      "status": "skipped",
+      "points": 50
+    },
+    {
+      "match_id": "117155436343202154",
+      "game_id": "117155436343202157",
+      "number": 3,
+      "date": "2026-09-03",
+      "league": "lpl",
+      "team_ids": {
+        "WE": "98767991887166787",
+        "BLG": "99566404853854212"
+      },
+      "competition": {
+        "league_slug": "lpl",
+        "league_name": "LPL",
+        "tournament_name": "Split 3 2026",
+        "stage_name": "Playoffs",
+        "event_start": "2026-09-03T09:00:00Z"
+      },
+      "winner_code": "WE",
+      "duration_seconds": 2020,
+      "label_source": "https://gol.gg/game/stats/82436/page-game/",
+      "status": "skipped",
+      "points": 68
+    },
+    {
+      "match_id": "113475871523985223",
+      "game_id": "113475871523985224",
+      "number": 1,
+      "date": "2025-10-28",
+      "league": "worlds",
+      "team_ids": {
+        "HLE": "100205573496804586",
+        "GEN": "100205573495116443"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-28T07:00:00Z"
+      },
+      "winner_code": "GEN",
+      "duration_seconds": 2008,
+      "label_source": "https://gol.gg/game/stats/72952/page-game/",
+      "status": "skipped",
+      "points": 68
+    },
+    {
+      "match_id": "113475871523985223",
+      "game_id": "113475871523985226",
+      "number": 3,
+      "date": "2025-10-28",
+      "league": "worlds",
+      "team_ids": {
+        "HLE": "100205573496804586",
+        "GEN": "100205573495116443"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-28T07:00:00Z"
+      },
+      "winner_code": "HLE",
+      "duration_seconds": 1905,
+      "label_source": "https://gol.gg/game/stats/72954/page-game/",
+      "status": "skipped",
+      "points": 64
+    },
+    {
+      "match_id": "113475871523985223",
+      "game_id": "113475871523985225",
+      "number": 2,
+      "date": "2025-10-28",
+      "league": "worlds",
+      "team_ids": {
+        "HLE": "100205573496804586",
+        "GEN": "100205573495116443"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-28T07:00:00Z"
+      },
+      "winner_code": "GEN",
+      "duration_seconds": 3531,
+      "label_source": "https://gol.gg/game/stats/72953/page-game/",
+      "status": "skipped",
+      "points": 118
+    },
+    {
+      "match_id": "113475871523985223",
+      "game_id": "113475871523985227",
+      "number": 4,
+      "date": "2025-10-28",
+      "league": "worlds",
+      "team_ids": {
+        "HLE": "100205573496804586",
+        "GEN": "100205573495116443"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-28T07:00:00Z"
+      },
+      "winner_code": "GEN",
+      "duration_seconds": 1923,
+      "label_source": "https://gol.gg/game/stats/72955/page-game/",
+      "status": "skipped",
+      "points": 64
+    },
+    {
+      "match_id": "113475871523985229",
+      "game_id": "113475871523985230",
+      "number": 1,
+      "date": "2025-10-29",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "KT": "99566404579461230"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-29T07:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 1971,
+      "label_source": "https://gol.gg/game/stats/72957/page-game/",
+      "status": "skipped",
+      "points": 66
+    },
+    {
+      "match_id": "113475871523985229",
+      "game_id": "113475871523985232",
+      "number": 3,
+      "date": "2025-10-29",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "KT": "99566404579461230"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-29T07:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 1759,
+      "label_source": "https://gol.gg/game/stats/72959/page-game/",
+      "status": "skipped",
+      "points": 59
+    },
+    {
+      "match_id": "113475871523985229",
+      "game_id": "113475871523985231",
+      "number": 2,
+      "date": "2025-10-29",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "KT": "99566404579461230"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-29T07:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 1472,
+      "label_source": "https://gol.gg/game/stats/72958/page-game/",
+      "status": "skipped",
+      "points": 50
+    },
+    {
+      "match_id": "113475871523985217",
+      "game_id": "113475871523985218",
+      "number": 1,
+      "date": "2025-10-30",
+      "league": "worlds",
+      "team_ids": {
+        "G2": "98767991926151025",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-30T07:00:00Z"
+      },
+      "winner_code": "TES",
+      "duration_seconds": 1830,
+      "label_source": "https://gol.gg/game/stats/72962/page-game/",
+      "status": "skipped",
+      "points": 62
+    },
+    {
+      "match_id": "113475871523985217",
+      "game_id": "113475871523985219",
+      "number": 2,
+      "date": "2025-10-30",
+      "league": "worlds",
+      "team_ids": {
+        "G2": "98767991926151025",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-30T07:00:00Z"
+      },
+      "winner_code": "G2",
+      "duration_seconds": 1944,
+      "label_source": "https://gol.gg/game/stats/72963/page-game/",
+      "status": "skipped",
+      "points": 65
+    },
+    {
+      "match_id": "113475871523985217",
+      "game_id": "113475871523985221",
+      "number": 4,
+      "date": "2025-10-30",
+      "league": "worlds",
+      "team_ids": {
+        "G2": "98767991926151025",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-30T07:00:00Z"
+      },
+      "winner_code": "TES",
+      "duration_seconds": 1764,
+      "label_source": "https://gol.gg/game/stats/72965/page-game/",
+      "status": "skipped",
+      "points": 59
+    },
+    {
+      "match_id": "113475871523985217",
+      "game_id": "113475871523985220",
+      "number": 3,
+      "date": "2025-10-30",
+      "league": "worlds",
+      "team_ids": {
+        "G2": "98767991926151025",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-30T07:00:00Z"
+      },
+      "winner_code": "TES",
+      "duration_seconds": 1757,
+      "label_source": "https://gol.gg/game/stats/72964/page-game/",
+      "status": "skipped",
+      "points": 59
+    },
+    {
+      "match_id": "113475871523985211",
+      "game_id": "113475871523985212",
+      "number": 1,
+      "date": "2025-10-31",
+      "league": "worlds",
+      "team_ids": {
+        "T1": "98767991853197861",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-31T07:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 2162,
+      "label_source": "https://gol.gg/game/stats/72967/page-game/",
+      "status": "skipped",
+      "points": 73
+    },
+    {
+      "match_id": "113475871523985211",
+      "game_id": "113475871523985213",
+      "number": 2,
+      "date": "2025-10-31",
+      "league": "worlds",
+      "team_ids": {
+        "T1": "98767991853197861",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-31T07:00:00Z"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 1893,
+      "label_source": "https://gol.gg/game/stats/72968/page-game/",
+      "status": "skipped",
+      "points": 64
+    },
+    {
+      "match_id": "113475871523985211",
+      "game_id": "113475871523985214",
+      "number": 3,
+      "date": "2025-10-31",
+      "league": "worlds",
+      "team_ids": {
+        "T1": "98767991853197861",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-31T07:00:00Z"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 2287,
+      "label_source": "https://gol.gg/game/stats/72969/page-game/",
+      "status": "skipped",
+      "points": 77
+    },
+    {
+      "match_id": "113475871523985211",
+      "game_id": "113475871523985215",
+      "number": 4,
+      "date": "2025-10-31",
+      "league": "worlds",
+      "team_ids": {
+        "T1": "98767991853197861",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-31T07:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 2192,
+      "label_source": "https://gol.gg/game/stats/72970/page-game/",
+      "status": "skipped",
+      "points": 74
+    },
+    {
+      "match_id": "113475871523985211",
+      "game_id": "113475871523985216",
+      "number": 5,
+      "date": "2025-10-31",
+      "league": "worlds",
+      "team_ids": {
+        "T1": "98767991853197861",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Quarterfinals",
+        "event_start": "2025-10-31T07:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 2115,
+      "label_source": "https://gol.gg/game/stats/72971/page-game/",
+      "status": "skipped",
+      "points": 71
+    },
+    {
+      "match_id": "113475871523985241",
+      "game_id": "113475871523985244",
+      "number": 3,
+      "date": "2025-11-01",
+      "league": "worlds",
+      "team_ids": {
+        "KT": "99566404579461230",
+        "GEN": "100205573495116443"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Semifinals",
+        "event_start": "2025-11-01T07:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 1740,
+      "label_source": "https://gol.gg/game/stats/72974/page-game/",
+      "status": "skipped",
+      "points": 59
+    },
+    {
+      "match_id": "113475871523985241",
+      "game_id": "113475871523985242",
+      "number": 1,
+      "date": "2025-11-01",
+      "league": "worlds",
+      "team_ids": {
+        "KT": "99566404579461230",
+        "GEN": "100205573495116443"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Semifinals",
+        "event_start": "2025-11-01T07:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 2806,
+      "label_source": "https://gol.gg/game/stats/72972/page-game/",
+      "status": "skipped",
+      "points": 94
+    },
+    {
+      "match_id": "113475871523985241",
+      "game_id": "113475871523985243",
+      "number": 2,
+      "date": "2025-11-01",
+      "league": "worlds",
+      "team_ids": {
+        "KT": "99566404579461230",
+        "GEN": "100205573495116443"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Semifinals",
+        "event_start": "2025-11-01T07:00:00Z"
+      },
+      "winner_code": "GEN",
+      "duration_seconds": 2348,
+      "label_source": "https://gol.gg/game/stats/72973/page-game/",
+      "status": "skipped",
+      "points": 79
+    },
+    {
+      "match_id": "113475871523985241",
+      "game_id": "113475871523985245",
+      "number": 4,
+      "date": "2025-11-01",
+      "league": "worlds",
+      "team_ids": {
+        "KT": "99566404579461230",
+        "GEN": "100205573495116443"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Semifinals",
+        "event_start": "2025-11-01T07:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 2108,
+      "label_source": "https://gol.gg/game/stats/72975/page-game/",
+      "status": "skipped",
+      "points": 71
+    },
+    {
+      "match_id": "113475871523985235",
+      "game_id": "113475871523985236",
+      "number": 1,
+      "date": "2025-11-02",
+      "league": "worlds",
+      "team_ids": {
+        "TES": "99566404854685458",
+        "T1": "98767991853197861"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Semifinals",
+        "event_start": "2025-11-02T07:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 1812,
+      "label_source": "https://gol.gg/game/stats/72977/page-game/",
+      "status": "skipped",
+      "points": 63
+    },
+    {
+      "match_id": "113475871523985235",
+      "game_id": "113475871523985237",
+      "number": 2,
+      "date": "2025-11-02",
+      "league": "worlds",
+      "team_ids": {
+        "TES": "99566404854685458",
+        "T1": "98767991853197861"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Semifinals",
+        "event_start": "2025-11-02T07:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 1630,
+      "label_source": "https://gol.gg/game/stats/72978/page-game/",
+      "status": "skipped",
+      "points": 55
+    },
+    {
+      "match_id": "113475871523985235",
+      "game_id": "113475871523985238",
+      "number": 3,
+      "date": "2025-11-02",
+      "league": "worlds",
+      "team_ids": {
+        "TES": "99566404854685458",
+        "T1": "98767991853197861"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Semifinals",
+        "event_start": "2025-11-02T07:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 1735,
+      "label_source": "https://gol.gg/game/stats/72979/page-game/",
+      "status": "skipped",
+      "points": 58
+    },
+    {
+      "match_id": "113475871524050783",
+      "game_id": "113475871524050787",
+      "number": 4,
+      "date": "2025-11-09",
+      "league": "worlds",
+      "team_ids": {
+        "T1": "98767991853197861",
+        "KT": "99566404579461230"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Finals",
+        "event_start": "2025-11-09T07:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 1780,
+      "label_source": "https://gol.gg/game/stats/72983/page-game/",
+      "status": "skipped",
+      "points": 60
+    },
+    {
+      "match_id": "113475871524050783",
+      "game_id": "113475871524050785",
+      "number": 2,
+      "date": "2025-11-09",
+      "league": "worlds",
+      "team_ids": {
+        "T1": "98767991853197861",
+        "KT": "99566404579461230"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Finals",
+        "event_start": "2025-11-09T07:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 2552,
+      "label_source": "https://gol.gg/game/stats/72981/page-game/",
+      "status": "skipped",
+      "points": 86
+    },
+    {
+      "match_id": "113475871524050783",
+      "game_id": "113475871524050786",
+      "number": 3,
+      "date": "2025-11-09",
+      "league": "worlds",
+      "team_ids": {
+        "T1": "98767991853197861",
+        "KT": "99566404579461230"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Finals",
+        "event_start": "2025-11-09T07:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 2212,
+      "label_source": "https://gol.gg/game/stats/72982/page-game/",
+      "status": "skipped",
+      "points": 74
+    },
+    {
+      "match_id": "113475871524050783",
+      "game_id": "113475871524050784",
+      "number": 1,
+      "date": "2025-11-09",
+      "league": "worlds",
+      "team_ids": {
+        "T1": "98767991853197861",
+        "KT": "99566404579461230"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Finals",
+        "event_start": "2025-11-09T07:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 2170,
+      "label_source": "https://gol.gg/game/stats/72980/page-game/",
+      "status": "skipped",
+      "points": 73
+    },
+    {
+      "match_id": "113475871524050783",
+      "game_id": "113475871524050788",
+      "number": 5,
+      "date": "2025-11-09",
+      "league": "worlds",
+      "team_ids": {
+        "T1": "98767991853197861",
+        "KT": "99566404579461230"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "Worlds",
+        "tournament_name": "2025",
+        "stage_name": "Finals",
+        "event_start": "2025-11-09T07:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 2207,
+      "label_source": "https://gol.gg/game/stats/72984/page-game/",
+      "status": "skipped",
+      "points": 74
+    },
+    {
+      "match_id": "113475798006664576",
+      "game_id": "113475798006664577",
+      "number": 1,
+      "date": "2025-10-15",
+      "league": "worlds",
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "100T": "99294153828264740"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round1",
+        "event_start": "2025-10-15T00:00:00Z"
+      },
+      "winner_code": "100T",
+      "duration_seconds": 1870,
+      "label_source": "https://gol.gg/game/stats/72869/page-game/",
       "status": "imported",
-      "points": 13,
+      "points": 63,
       "winner_side": "red",
-      "actual_duration_seconds": 1495,
+      "actual_duration_seconds": 1870,
       "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664572",
+      "game_id": "113475798006664573",
+      "number": 1,
+      "date": "2025-10-15",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "FNC": "98767991866488695"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round1",
+        "event_start": "2025-10-15T00:00:00Z"
+      },
+      "winner_code": "CFO",
+      "duration_seconds": 1921,
+      "label_source": "https://gol.gg/game/stats/72867/page-game/",
+      "status": "imported",
+      "points": 64,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1916,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664574",
+      "game_id": "113475798006664575",
+      "number": 1,
+      "date": "2025-10-15",
+      "league": "worlds",
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "KT": "99566404579461230"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round1",
+        "event_start": "2025-10-15T00:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 2009,
+      "label_source": "https://gol.gg/game/stats/72868/page-game/",
+      "status": "imported",
+      "points": 67,
+      "winner_side": "blue",
+      "actual_duration_seconds": 2004,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006599034",
+      "game_id": "113475798006599035",
+      "number": 1,
+      "date": "2025-10-15",
+      "league": "worlds",
+      "team_ids": {
+        "VKS": "99566408219409348",
+        "TSW": "113661839307879869"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round1",
+        "event_start": "2025-10-15T00:00:00Z"
+      },
+      "winner_code": "TSW",
+      "duration_seconds": 2009,
+      "label_source": "https://gol.gg/game/stats/72866/page-game/",
+      "status": "imported",
+      "points": 67,
+      "winner_side": "blue",
+      "actual_duration_seconds": 2009,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664584",
+      "game_id": "113475798006664585",
+      "number": 1,
+      "date": "2025-10-15",
+      "league": "worlds",
+      "team_ids": {
+        "GEN": "100205573495116443",
+        "PSG": "104367068120825486"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round1",
+        "event_start": "2025-10-15T00:00:00Z"
+      },
+      "winner_code": "GEN",
+      "duration_seconds": 1642,
+      "label_source": "https://gol.gg/game/stats/72873/page-game/",
+      "status": "imported",
+      "points": 55,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1642,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664582",
+      "game_id": "113475798006664583",
+      "number": 1,
+      "date": "2025-10-15",
+      "league": "worlds",
+      "team_ids": {
+        "G2": "98767991926151025",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round1",
+        "event_start": "2025-10-15T00:00:00Z"
+      },
+      "winner_code": "TES",
+      "duration_seconds": 1945,
+      "label_source": "https://gol.gg/game/stats/72872/page-game/",
+      "status": "imported",
+      "points": 65,
+      "winner_side": "red",
+      "actual_duration_seconds": 1945,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664578",
+      "game_id": "113475798006664579",
+      "number": 1,
+      "date": "2025-10-15",
+      "league": "worlds",
+      "team_ids": {
+        "FLY": "98926509892121852",
+        "T1": "98767991853197861"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round1",
+        "event_start": "2025-10-15T00:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 2066,
+      "label_source": "https://gol.gg/game/stats/72870/page-game/",
+      "status": "imported",
+      "points": 69,
+      "winner_side": "red",
+      "actual_duration_seconds": 2066,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664580",
+      "game_id": "113475798006664581",
+      "number": 1,
+      "date": "2025-10-15",
+      "league": "worlds",
+      "team_ids": {
+        "HLE": "100205573496804586",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round1",
+        "event_start": "2025-10-15T00:00:00Z"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 2474,
+      "label_source": "https://gol.gg/game/stats/72871/page-game/",
+      "status": "imported",
+      "points": 83,
+      "winner_side": "red",
+      "actual_duration_seconds": 2473,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": true
+    },
+    {
+      "match_id": "113475798006664586",
+      "game_id": "113475798006664587",
+      "number": 1,
+      "date": "2025-10-16",
+      "league": "worlds",
+      "team_ids": {
+        "TSW": "113661839307879869",
+        "KT": "99566404579461230"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round2",
+        "event_start": "2025-10-16T00:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 1686,
+      "label_source": "https://gol.gg/game/stats/72875/page-game/",
+      "status": "imported",
+      "points": 57,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1686,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664588",
+      "game_id": "113475798006664589",
+      "number": 1,
+      "date": "2025-10-16",
+      "league": "worlds",
+      "team_ids": {
+        "TES": "99566404854685458",
+        "100T": "99294153828264740"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round2",
+        "event_start": "2025-10-16T00:00:00Z"
+      },
+      "winner_code": "TES",
+      "duration_seconds": 1580,
+      "label_source": "https://gol.gg/game/stats/72877/page-game/",
+      "status": "imported",
+      "points": 53,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1575,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664590",
+      "game_id": "113475798006664591",
+      "number": 1,
+      "date": "2025-10-16",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "T1": "98767991853197861"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round2",
+        "event_start": "2025-10-16T00:00:00Z"
+      },
+      "winner_code": "CFO",
+      "duration_seconds": 1942,
+      "label_source": "https://gol.gg/game/stats/72878/page-game/",
+      "status": "imported",
+      "points": 65,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1937,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664592",
+      "game_id": "113475798006664593",
+      "number": 1,
+      "date": "2025-10-16",
+      "league": "worlds",
+      "team_ids": {
+        "GEN": "100205573495116443",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round2",
+        "event_start": "2025-10-16T00:00:00Z"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 1935,
+      "label_source": "https://gol.gg/game/stats/72879/page-game/",
+      "status": "imported",
+      "points": 65,
+      "winner_side": "red",
+      "actual_duration_seconds": 1935,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664596",
+      "game_id": "113475798006664597",
+      "number": 1,
+      "date": "2025-10-16",
+      "league": "worlds",
+      "team_ids": {
+        "G2": "98767991926151025",
+        "MKOI": "103461966965149786"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round2",
+        "event_start": "2025-10-16T00:00:00Z"
+      },
+      "winner_code": "G2",
+      "duration_seconds": 1701,
+      "label_source": "https://gol.gg/game/stats/72876/page-game/",
+      "status": "imported",
+      "points": 57,
+      "winner_side": "red",
+      "actual_duration_seconds": 1701,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664594",
+      "game_id": "113475798006664595",
+      "number": 1,
+      "date": "2025-10-16",
+      "league": "worlds",
+      "team_ids": {
+        "FLY": "98926509892121852",
+        "VKS": "99566408219409348"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round2",
+        "event_start": "2025-10-16T00:00:00Z"
+      },
+      "winner_code": "FLY",
+      "duration_seconds": 1878,
+      "label_source": "https://gol.gg/game/stats/72874/page-game/",
+      "status": "imported",
+      "points": 63,
+      "winner_side": "red",
+      "actual_duration_seconds": 1878,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664598",
+      "game_id": "113475798006664599",
+      "number": 1,
+      "date": "2025-10-16",
+      "league": "worlds",
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "FNC": "98767991866488695"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round2",
+        "event_start": "2025-10-16T00:00:00Z"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 1673,
+      "label_source": "https://gol.gg/game/stats/72880/page-game/",
+      "status": "imported",
+      "points": 56,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1673,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664600",
+      "game_id": "113475798006664601",
+      "number": 1,
+      "date": "2025-10-16",
+      "league": "worlds",
+      "team_ids": {
+        "HLE": "100205573496804586",
+        "PSG": "104367068120825486"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round2",
+        "event_start": "2025-10-16T00:00:00Z"
+      },
+      "winner_code": "HLE",
+      "duration_seconds": 1693,
+      "label_source": "https://gol.gg/game/stats/72881/page-game/",
+      "status": "imported",
+      "points": 57,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1688,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664602",
+      "game_id": "113475798006664604",
+      "number": 2,
+      "date": "2025-10-17",
+      "league": "worlds",
+      "team_ids": {
+        "KT": "99566404579461230",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-17T00:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 1760,
+      "label_source": "https://gol.gg/game/stats/72886/page-game/",
+      "status": "imported",
+      "points": 59,
+      "winner_side": "red",
+      "actual_duration_seconds": 1757,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664602",
+      "game_id": "113475798006664603",
+      "number": 1,
+      "date": "2025-10-17",
+      "league": "worlds",
+      "team_ids": {
+        "KT": "99566404579461230",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-17T00:00:00Z"
+      },
+      "winner_code": "KT",
+      "duration_seconds": 1979,
+      "label_source": "https://gol.gg/game/stats/72885/page-game/",
+      "status": "imported",
+      "points": 66,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1979,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664606",
+      "game_id": "113475798006664607",
+      "number": 1,
+      "date": "2025-10-17",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-17T00:00:00Z"
+      },
+      "winner_code": "CFO",
+      "duration_seconds": 2303,
+      "label_source": "https://gol.gg/game/stats/72882/page-game/",
+      "status": "imported",
+      "points": 77,
+      "winner_side": "blue",
+      "actual_duration_seconds": 2299,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664606",
+      "game_id": "113475798006664608",
+      "number": 2,
+      "date": "2025-10-17",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-17T00:00:00Z"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 1810,
+      "label_source": "https://gol.gg/game/stats/72883/page-game/",
+      "status": "imported",
+      "points": 61,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1807,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664606",
+      "game_id": "113475798006664609",
+      "number": 3,
+      "date": "2025-10-17",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "AL": "99566404856367466"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-17T00:00:00Z"
+      },
+      "winner_code": "AL",
+      "duration_seconds": 1791,
+      "label_source": "https://gol.gg/game/stats/72884/page-game/",
+      "status": "imported",
+      "points": 60,
+      "winner_side": "red",
+      "actual_duration_seconds": 1791,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664610",
+      "game_id": "113475798006664611",
+      "number": 1,
+      "date": "2025-10-18",
+      "league": "worlds",
+      "team_ids": {
+        "FLY": "98926509892121852",
+        "TSW": "113661839307879869"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-18T00:00:00Z"
+      },
+      "winner_code": "FLY",
+      "duration_seconds": 1937,
+      "label_source": "https://gol.gg/game/stats/72890/page-game/",
+      "status": "imported",
+      "points": 65,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1937,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664612",
+      "game_id": "113475798006664613",
+      "number": 1,
+      "date": "2025-10-18",
+      "league": "worlds",
+      "team_ids": {
+        "GEN": "100205573495116443",
+        "T1": "98767991853197861"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-18T00:00:00Z"
+      },
+      "winner_code": "GEN",
+      "duration_seconds": 1663,
+      "label_source": "https://gol.gg/game/stats/72889/page-game/",
+      "status": "imported",
+      "points": 56,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1660,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664614",
+      "game_id": "113475798006664615",
+      "number": 1,
+      "date": "2025-10-18",
+      "league": "worlds",
+      "team_ids": {
+        "G2": "98767991926151025",
+        "BLG": "99566404853854212"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-18T00:00:00Z"
+      },
+      "winner_code": "G2",
+      "duration_seconds": 1683,
+      "label_source": "https://gol.gg/game/stats/72888/page-game/",
+      "status": "imported",
+      "points": 56,
+      "winner_side": "red",
+      "actual_duration_seconds": 1681,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664616",
+      "game_id": "113475798006664617",
+      "number": 1,
+      "date": "2025-10-18",
+      "league": "worlds",
+      "team_ids": {
+        "HLE": "100205573496804586",
+        "100T": "99294153828264740"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-18T00:00:00Z"
+      },
+      "winner_code": "HLE",
+      "duration_seconds": 1490,
+      "label_source": "https://gol.gg/game/stats/72891/page-game/",
+      "status": "imported",
+      "points": 50,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1489,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664618",
+      "game_id": "113475798006664619",
+      "number": 1,
+      "date": "2025-10-19",
+      "league": "worlds",
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "FNC": "98767991866488695"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-19T00:00:00Z"
+      },
+      "winner_code": "MKOI",
+      "duration_seconds": 1620,
+      "label_source": "https://gol.gg/game/stats/72895/page-game/",
+      "status": "imported",
+      "points": 54,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1618,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664618",
+      "game_id": "113475798006664620",
+      "number": 2,
+      "date": "2025-10-19",
+      "league": "worlds",
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "FNC": "98767991866488695"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-19T00:00:00Z"
+      },
+      "winner_code": "FNC",
+      "duration_seconds": 1606,
+      "label_source": "https://gol.gg/game/stats/72896/page-game/",
+      "status": "imported",
+      "points": 54,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1602,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664618",
+      "game_id": "113475798006664621",
+      "number": 3,
+      "date": "2025-10-19",
+      "league": "worlds",
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "FNC": "98767991866488695"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-19T00:00:00Z"
+      },
+      "winner_code": "MKOI",
+      "duration_seconds": 1738,
+      "label_source": "https://gol.gg/game/stats/72897/page-game/",
+      "status": "imported",
+      "points": 58,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1734,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664622",
+      "game_id": "113475798006664623",
+      "number": 1,
+      "date": "2025-10-19",
+      "league": "worlds",
+      "team_ids": {
+        "VKS": "99566408219409348",
+        "PSG": "104367068120825486"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-19T00:00:00Z"
+      },
+      "winner_code": "VKS",
+      "duration_seconds": 1534,
+      "label_source": "https://gol.gg/game/stats/72892/page-game/",
+      "status": "imported",
+      "points": 51,
+      "winner_side": "red",
+      "actual_duration_seconds": 1529,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664622",
+      "game_id": "113475798006664624",
+      "number": 2,
+      "date": "2025-10-19",
+      "league": "worlds",
+      "team_ids": {
+        "VKS": "99566408219409348",
+        "PSG": "104367068120825486"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-19T00:00:00Z"
+      },
+      "winner_code": "PSG",
+      "duration_seconds": 2058,
+      "label_source": "https://gol.gg/game/stats/72893/page-game/",
+      "status": "imported",
+      "points": 69,
+      "winner_side": "blue",
+      "actual_duration_seconds": 2057,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": true
+    },
+    {
+      "match_id": "113475798006664622",
+      "game_id": "113475798006664625",
+      "number": 3,
+      "date": "2025-10-19",
+      "league": "worlds",
+      "team_ids": {
+        "VKS": "99566408219409348",
+        "PSG": "104367068120825486"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round3",
+        "event_start": "2025-10-19T00:00:00Z"
+      },
+      "winner_code": "VKS",
+      "duration_seconds": 2073,
+      "label_source": "https://gol.gg/game/stats/72894/page-game/",
+      "status": "imported",
+      "points": 70,
+      "winner_side": "blue",
+      "actual_duration_seconds": 2073,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664626",
+      "game_id": "113475798006664627",
+      "number": 1,
+      "date": "2025-10-22",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "HLE": "100205573496804586"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-22T00:00:00Z"
+      },
+      "winner_code": "HLE",
+      "duration_seconds": 1883,
+      "label_source": "https://gol.gg/game/stats/72915/page-game/",
+      "status": "imported",
+      "points": 63,
+      "winner_side": "red",
+      "actual_duration_seconds": 1883,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664626",
+      "game_id": "113475798006664628",
+      "number": 2,
+      "date": "2025-10-22",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "HLE": "100205573496804586"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-22T00:00:00Z"
+      },
+      "winner_code": "HLE",
+      "duration_seconds": 2081,
+      "label_source": "https://gol.gg/game/stats/72916/page-game/",
+      "status": "imported",
+      "points": 70,
+      "winner_side": "red",
+      "actual_duration_seconds": 2079,
+      "pause_adjusted_seconds": 69,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664630",
+      "game_id": "113475798006664631",
+      "number": 1,
+      "date": "2025-10-22",
+      "league": "worlds",
+      "team_ids": {
+        "G2": "98767991926151025",
+        "FLY": "98926509892121852"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-22T00:00:00Z"
+      },
+      "winner_code": "FLY",
+      "duration_seconds": 2288,
+      "label_source": "https://gol.gg/game/stats/72918/page-game/",
+      "status": "imported",
+      "points": 77,
+      "winner_side": "blue",
+      "actual_duration_seconds": 2288,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664630",
+      "game_id": "113475798006664632",
+      "number": 2,
+      "date": "2025-10-22",
+      "league": "worlds",
+      "team_ids": {
+        "G2": "98767991926151025",
+        "FLY": "98926509892121852"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-22T00:00:00Z"
+      },
+      "winner_code": "G2",
+      "duration_seconds": 1894,
+      "label_source": "https://gol.gg/game/stats/72919/page-game/",
+      "status": "imported",
+      "points": 63,
+      "winner_side": "red",
+      "actual_duration_seconds": 1891,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664630",
+      "game_id": "113475798006664633",
+      "number": 3,
+      "date": "2025-10-22",
+      "league": "worlds",
+      "team_ids": {
+        "G2": "98767991926151025",
+        "FLY": "98926509892121852"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-22T00:00:00Z"
+      },
+      "winner_code": "G2",
+      "duration_seconds": 2083,
+      "label_source": "https://gol.gg/game/stats/72920/page-game/",
+      "status": "imported",
+      "points": 70,
+      "winner_side": "red",
+      "actual_duration_seconds": 2083,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664634",
+      "game_id": "113475798006664635",
+      "number": 1,
+      "date": "2025-10-23",
+      "league": "worlds",
+      "team_ids": {
+        "GEN": "100205573495116443",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-23T00:00:00Z"
+      },
+      "winner_code": "GEN",
+      "duration_seconds": 1495,
+      "label_source": "https://gol.gg/game/stats/72924/page-game/",
+      "status": "imported",
+      "points": 50,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1491,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664634",
+      "game_id": "113475798006664636",
+      "number": 2,
+      "date": "2025-10-23",
+      "league": "worlds",
+      "team_ids": {
+        "GEN": "100205573495116443",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-23T00:00:00Z"
+      },
+      "winner_code": "GEN",
+      "duration_seconds": 1767,
+      "label_source": "https://gol.gg/game/stats/72925/page-game/",
+      "status": "imported",
+      "points": 59,
+      "winner_side": "red",
+      "actual_duration_seconds": 1766,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664638",
+      "game_id": "113475798006664639",
+      "number": 1,
+      "date": "2025-10-23",
+      "league": "worlds",
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "TSW": "113661839307879869"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-23T00:00:00Z"
+      },
+      "winner_code": "TSW",
+      "duration_seconds": 2075,
+      "label_source": "https://gol.gg/game/stats/72921/page-game/",
+      "status": "imported",
+      "points": 70,
+      "winner_side": "red",
+      "actual_duration_seconds": 2076,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664638",
+      "game_id": "113475798006664641",
+      "number": 3,
+      "date": "2025-10-23",
+      "league": "worlds",
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "TSW": "113661839307879869"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-23T00:00:00Z"
+      },
+      "winner_code": "MKOI",
+      "duration_seconds": 1765,
+      "label_source": "https://gol.gg/game/stats/72923/page-game/",
+      "status": "imported",
+      "points": 59,
+      "winner_side": "red",
+      "actual_duration_seconds": 1765,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664638",
+      "game_id": "113475798006664640",
+      "number": 2,
+      "date": "2025-10-23",
+      "league": "worlds",
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "TSW": "113661839307879869"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-23T00:00:00Z"
+      },
+      "winner_code": "MKOI",
+      "duration_seconds": 2116,
+      "label_source": "https://gol.gg/game/stats/72922/page-game/",
+      "status": "imported",
+      "points": 71,
+      "winner_side": "red",
+      "actual_duration_seconds": 2116,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664642",
+      "game_id": "113475798006664643",
+      "number": 1,
+      "date": "2025-10-24",
+      "league": "worlds",
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "VKS": "99566408219409348"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-24T00:00:00Z"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 1794,
+      "label_source": "https://gol.gg/game/stats/72927/page-game/",
+      "status": "imported",
+      "points": 60,
+      "winner_side": "blue",
+      "actual_duration_seconds": 1793,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664646",
+      "game_id": "113475798006664648",
+      "number": 2,
+      "date": "2025-10-24",
+      "league": "worlds",
+      "team_ids": {
+        "100T": "99294153828264740",
+        "T1": "98767991853197861"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-24T00:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 1801,
+      "label_source": "https://gol.gg/game/stats/72931/page-game/",
+      "status": "imported",
+      "points": 60,
+      "winner_side": "red",
+      "actual_duration_seconds": 1799,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664646",
+      "game_id": "113475798006664647",
+      "number": 1,
+      "date": "2025-10-24",
+      "league": "worlds",
+      "team_ids": {
+        "100T": "99294153828264740",
+        "T1": "98767991853197861"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-24T00:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 2495,
+      "label_source": "https://gol.gg/game/stats/72930/page-game/",
+      "status": "imported",
+      "points": 84,
+      "winner_side": "red",
+      "actual_duration_seconds": 2494,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664642",
+      "game_id": "113475798006664644",
+      "number": 2,
+      "date": "2025-10-24",
+      "league": "worlds",
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "VKS": "99566408219409348"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round4",
+        "event_start": "2025-10-24T00:00:00Z"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 2631,
+      "label_source": "https://gol.gg/game/stats/72928/page-game/",
+      "status": "imported",
+      "points": 88,
+      "winner_side": "red",
+      "actual_duration_seconds": 2626,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664650",
+      "game_id": "113475798006664652",
+      "number": 2,
+      "date": "2025-10-25",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "FLY": "98926509892121852"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round5",
+        "event_start": "2025-10-25T00:00:00Z"
+      },
+      "winner_code": "CFO",
+      "duration_seconds": 1631,
+      "label_source": "https://gol.gg/game/stats/72945/page-game/",
+      "status": "imported",
+      "points": 55,
+      "winner_side": "red",
+      "actual_duration_seconds": 1631,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664654",
+      "game_id": "113475798006664655",
+      "number": 1,
+      "date": "2025-10-25",
+      "league": "worlds",
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round5",
+        "event_start": "2025-10-25T00:00:00Z"
+      },
+      "winner_code": "BLG",
+      "duration_seconds": 1699,
+      "label_source": "https://gol.gg/game/stats/72947/page-game/",
+      "status": "imported",
+      "points": 57,
+      "winner_side": "red",
+      "actual_duration_seconds": 1698,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664654",
+      "game_id": "113475798006664656",
+      "number": 2,
+      "date": "2025-10-25",
+      "league": "worlds",
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round5",
+        "event_start": "2025-10-25T00:00:00Z"
+      },
+      "winner_code": "TES",
+      "duration_seconds": 1717,
+      "label_source": "https://gol.gg/game/stats/72948/page-game/",
+      "status": "imported",
+      "points": 58,
+      "winner_side": "red",
+      "actual_duration_seconds": 1717,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664654",
+      "game_id": "113475798006664657",
+      "number": 3,
+      "date": "2025-10-25",
+      "league": "worlds",
+      "team_ids": {
+        "BLG": "99566404853854212",
+        "TES": "99566404854685458"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round5",
+        "event_start": "2025-10-25T00:00:00Z"
+      },
+      "winner_code": "TES",
+      "duration_seconds": 2153,
+      "label_source": "https://gol.gg/game/stats/72949/page-game/",
+      "status": "imported",
+      "points": 72,
+      "winner_side": "blue",
+      "actual_duration_seconds": 2151,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664658",
+      "game_id": "113475798006664659",
+      "number": 1,
+      "date": "2025-10-25",
+      "league": "worlds",
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "T1": "98767991853197861"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round5",
+        "event_start": "2025-10-25T00:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 1974,
+      "label_source": "https://gol.gg/game/stats/72950/page-game/",
+      "status": "imported",
+      "points": 66,
+      "winner_side": "red",
+      "actual_duration_seconds": 1974,
+      "pause_adjusted_seconds": 0,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664658",
+      "game_id": "113475798006664660",
+      "number": 2,
+      "date": "2025-10-25",
+      "league": "worlds",
+      "team_ids": {
+        "MKOI": "103461966965149786",
+        "T1": "98767991853197861"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round5",
+        "event_start": "2025-10-25T00:00:00Z"
+      },
+      "winner_code": "T1",
+      "duration_seconds": 2479,
+      "label_source": "https://gol.gg/game/stats/72951/page-game/",
+      "status": "imported",
+      "points": 84,
+      "winner_side": "blue",
+      "actual_duration_seconds": 2491,
+      "pause_adjusted_seconds": 43,
+      "outcome_reconciled": false
+    },
+    {
+      "match_id": "113475798006664650",
+      "game_id": "113475798006664651",
+      "number": 1,
+      "date": "2025-10-25",
+      "league": "worlds",
+      "team_ids": {
+        "CFO": "107700199633958891",
+        "FLY": "98926509892121852"
+      },
+      "competition": {
+        "league_slug": "worlds",
+        "league_name": "WORLDS",
+        "tournament_name": "2025",
+        "stage_name": "Swiss Round5",
+        "event_start": "2025-10-25T00:00:00Z"
+      },
+      "winner_code": "CFO",
+      "duration_seconds": 2708,
+      "label_source": "https://gol.gg/game/stats/72944/page-game/",
+      "status": "imported",
+      "points": 92,
+      "winner_side": "blue",
+      "actual_duration_seconds": 2704,
+      "pause_adjusted_seconds": 991,
       "outcome_reconciled": false
     }
   ],

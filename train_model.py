@@ -48,7 +48,7 @@ def fit(rows):
             "intercept": intercept, "weights": weights, "means": means, "scales": scales}
 
 
-def load_games(db_path):
+def load_games(db_path, league=None):
     db = sqlite3.connect(db_path)
     records = db.execute("SELECT game_id, game_time, received_at, finished, winner_id, frame_json FROM frames ORDER BY game_id, game_time").fetchall()
     by_game = defaultdict(list)
@@ -60,6 +60,9 @@ def load_games(db_path):
         if not last[3] or last[4] is None:
             continue
         final_frame = json.loads(last[5])
+        if (league is not None
+                and (final_frame.get("competition") or {}).get("league_slug") != league):
+            continue
         y = int(str(last[4]) == str(final_frame["blue"]["id"]))
         # One snapshot per 30-second bucket. Keep the last observed snapshot
         # when only its outcome was reconciled later; exclude true terminal frames.
@@ -93,6 +96,17 @@ def split_by_match(games):
     return train, test, len(chronological) - test_count, test_count
 
 
+def evaluate_holdout(games):
+    train_games, test_games, train_matches, test_matches = split_by_match(games)
+    train = [row for _, _, rows, _ in train_games for row in rows]
+    test = [row for _, _, rows, _ in test_games for row in rows]
+    evaluation_model = fit(train)
+    return {"train_games": len(train_games), "test_games": len(test_games),
+            "train_matches": train_matches, "test_matches": test_matches,
+            "train_frames": len(train), "test_frames": len(test),
+            "test_metrics": metrics(test, evaluation_model)}
+
+
 def main():
     root = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser()
@@ -103,24 +117,25 @@ def main():
     if len(games) < 20:
         raise SystemExit("need >=20 completed labeled games; found %d" % len(games))
     try:
-        train_games, test_games, train_matches, test_matches = split_by_match(games)
+        holdout = evaluate_holdout(games)
     except ValueError as exc:
         raise SystemExit(str(exc)) from exc
-    train = [row for _, _, rows, _ in train_games for row in rows]
-    test = [row for _, _, rows, _ in test_games for row in rows]
-    evaluation_model = fit(train)
-    holdout = {"train_games": len(train_games), "test_games": len(test_games),
-                        "train_matches": train_matches, "test_matches": test_matches,
-                        "train_frames": len(train), "test_frames": len(test),
-                        "test_metrics": metrics(test, evaluation_model)}
     # Keep the chronological holdout result as an honest evaluation, then fit
     # the deployed coefficients on every labeled game after evaluation.
     all_rows = [row for _, _, rows, _ in games for row in rows]
     model = fit(all_rows)
     model["holdout"] = holdout
-    model["training"] = {"games": len(games), "matches": train_matches + test_matches,
+    model["training"] = {"games": len(games),
+                         "matches": holdout["train_matches"] + holdout["test_matches"],
                          "frames": len(all_rows), "sample_interval_seconds": 30,
                          "refit_on_all_labeled_data": True}
+    worlds_games = load_games(args.db, "worlds")
+    try:
+        model["evaluations"] = {"worlds_time_holdout": evaluate_holdout(worlds_games)}
+    except ValueError:
+        # Worlds evaluation becomes available automatically after at least
+        # five distinct series have independently verified outcomes.
+        pass
     destination = Path(args.output)
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(model, indent=2), encoding="utf-8")
