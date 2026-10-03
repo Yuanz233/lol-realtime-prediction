@@ -71,6 +71,54 @@ class FlowTest(unittest.TestCase):
         self.assertIsNone(collector.match_id)
         self.assertEqual(collector.game_ids, [])
 
+    def test_dcgi_recovers_live_bo1_omitted_before_next_schedule_item(self):
+        now = datetime.now(timezone.utc).replace(microsecond=0)
+        following = {"id": "379", "type": "match", "state": "unstarted",
+                     "startTime": (now + timedelta(minutes=30)).isoformat().replace(
+                         "+00:00", "Z"),
+                     "blockName": "Swiss",
+                     "league": {"slug": "demacia_cup", "name": "DCGI"},
+                     "tournament": {"name": "2026"},
+                     "matchTeams": [],
+                     "match": {"id": "379", "games": [
+                         {"id": "380", "number": 1, "state": "unstarted"}]}}
+        embedded = {"rehydrate": {"query": {"data": {"esports": {
+            "events": [following]}}}}}
+        html = '<script>(window[Symbol.for("ApolloSSRDataTransport")] ??= []).push(' \
+            + json.dumps(embedded) + ')</script>'
+        source = {"rfc460Timestamp": (now - timedelta(minutes=2)).isoformat().replace(
+                      "+00:00", "Z"),
+                  "gameState": "in_game",
+                  "blueTeam": {"totalGold": 30000, "totalKills": 5, "towers": 2,
+                               "dragons": ["ocean"], "barons": 0, "inhibitors": 0},
+                  "redTeam": {"totalGold": 28000, "totalKills": 3, "towers": 1,
+                              "dragons": [], "barons": 0, "inhibitors": 0}}
+        payload = {"esportsGameId": "378", "esportsMatchId": "196841",
+                   "gameMetadata": {
+                       "blueTeamMetadata": {"esportsTeamId": "1",
+                           "participantMetadata": [{"summonerName": "RED Top"}]},
+                       "redTeamMetadata": {"esportsTeamId": "2",
+                           "participantMetadata": [{"summonerName": "NAVI Top"}]}},
+                   "frames": [source]}
+
+        def fetch(kind, game_id, start=None):
+            return payload if game_id == "378" else None
+
+        with tempfile.TemporaryDirectory() as folder:
+            db = str(Path(folder) / "dcgi.sqlite3")
+            collector = LoLEsportsCollector(db, BASELINE, league_slug="demacia_cup",
+                fetch=fetch, schedule_fetch=lambda league: html, probe_missing_live=True)
+            collector.discover(now.timestamp())
+            self.assertEqual(collector.match_id, "196841")
+            self.assertEqual(collector.game_ids, ["378"])
+            self.assertEqual(collector.team_names, {"1": "RED", "2": "NAVI"})
+            collector._poll_game("378")
+            stored = game(db, "378")
+            self.assertIsNotNone(stored)
+            self.assertEqual(stored["latest"]["frame"]["competition"]["league_slug"],
+                             "demacia_cup")
+            self.assertEqual(stored["latest"]["frame"]["blue"]["name"], "RED")
+
     def test_late_join_saves_recovered_early_frames(self):
         now = datetime.now(timezone.utc)
         beginning = now - timedelta(minutes=21)

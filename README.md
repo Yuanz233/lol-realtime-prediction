@@ -23,7 +23,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 .\scripts\start-windows.ps1 -Port 8000
 ```
 
-打开 `http://服务器IP:8000`，按 `Ctrl+C` 停止。启动脚本默认启用免费的 LoL Esports 采集器，自动发现 LPL、LCK、LEC、VCS 和 Worlds 的当前或下一场比赛，并优先使用项目 `.venv`。完整的首次部署、更新、备份和可选开机自启步骤见[Windows服务器部署](./Windows服务器部署.md)和[部署与迁移](./部署与迁移.md)。
+打开 `http://服务器IP:8000`，按 `Ctrl+C` 停止。启动脚本默认启用免费的 LoL Esports 采集器，自动发现 LPL、LCK、LEC、VCS、Worlds 和 DCGI 的当前或下一场比赛，并优先使用项目 `.venv`。完整的首次部署、更新、备份和可选开机自启步骤见[Windows服务器部署](./Windows服务器部署.md)和[部署与迁移](./部署与迁移.md)。
 
 ## 本地启动
 
@@ -36,7 +36,7 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
-打开 `http://127.0.0.1:8000`。直接运行默认启用免费的 LoL Esports 采集器，并自动发现 LPL、LCK、LEC、VCS 和 Worlds；它使用网站展示接口，仍属于没有稳定性保证的实验路径。默认每30秒保存一次，与训练样本间隔一致。如需纯离线查看历史，可用 `LIVE_PROVIDER=none python app.py`。
+打开 `http://127.0.0.1:8000`。直接运行默认启用免费的 LoL Esports 采集器，并自动发现 LPL、LCK、LEC、VCS、Worlds 和 DCGI；它使用网站展示接口，仍属于没有稳定性保证的实验路径。默认每30秒保存一次，与训练样本间隔一致。DCGI 的连续 BO1 赛程偶尔会在开赛后暂时移除当前赛程项，采集器会在下一场开赛前仅探测相邻的少量游戏 ID，并且只有实时帧明确为 `in_game` 或 `paused` 才接入。如需纯离线查看历史，可用 `LIVE_PROVIDER=none python app.py`。
 
 网页、JavaScript、CSS和JSON接口都返回 `Cache-Control: no-store`，更新代码并重启服务后，手机重新载入页面即可取得最新版本。
 
@@ -44,7 +44,7 @@ python app.py
 
 ```bash
 LIVE_PROVIDER=lolesports \
-LOLESPORTS_LEAGUES=lpl,lck,lec,vcs,worlds \
+LOLESPORTS_LEAGUES=lpl,lck,lec,vcs,worlds,demacia_cup \
 ALLOW_MANUAL_RESULT=true \
 python app.py
 ```

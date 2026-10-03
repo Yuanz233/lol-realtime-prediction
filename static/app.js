@@ -17,12 +17,13 @@ function option(value, text) {
 
 function setConnection(status) {
   statusCache = status;
-  const node = $('connection');
+  const node = $('connection'),leagues=status.leagues||[];
+  const historyOnlyWarning=Boolean(status.provider_warning&&!leagues.some(item=>item.error)&&status.history_sync&&status.history_sync.last_error);
   node.className = `connection ${status.provider_error ? 'error' : status.provider_warning ? 'warning' : status.provider_enabled ? 'online' : 'offline'}`;
-  node.replaceChildren(); node.append(Object.assign(document.createElement('span'), {}), status.provider_error ? '数据源异常' : status.provider_warning ? '部分同步异常' : status.provider_enabled ? (phaseNames[status.provider_phase]||'实时源已连接') : '历史数据模式');
+  node.replaceChildren(); node.append(Object.assign(document.createElement('span'), {}), status.provider_error ? '数据源异常' : historyOnlyWarning ? '历史同步稍后重试' : status.provider_warning ? '部分同步异常' : status.provider_enabled ? (phaseNames[status.provider_phase]||'实时源已连接') : '历史数据模式');
   const trainedGames=status.model_training&&status.model_training.games;
   $('metric-model').textContent = `${modelName(status.model_kind)}${trainedGames?` · ${trainedGames}局`:''}`;
-  const monitor=$('league-monitor'),leagues=status.leagues||[];monitor.replaceChildren();monitor.hidden=!leagues.length;
+  const monitor=$('league-monitor');monitor.replaceChildren();monitor.hidden=!leagues.length;
   leagues.forEach(item=>{const card=document.createElement('div'),name=document.createElement('strong'),state=document.createElement('span'),note=document.createElement('small');name.textContent=(item.competition&&item.competition.league_name)||String(item.league||'').toUpperCase();state.textContent=phaseNames[item.phase]||item.phase||'等待状态';note.textContent=item.error?'数据源异常':item.active_game_id?`Game ${item.active_game_id}`:item.scheduled_start?new Date(item.scheduled_start).toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}):'等待赛程';card.className=item.error?'error':'';card.append(name,state,note);monitor.append(card);});
 }
 

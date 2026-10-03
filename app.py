@@ -147,7 +147,7 @@ def main():
             game_id=game_id or None, match_id=match_id or None)
     elif live_provider == "lolesports":
         leagues_text = os.getenv("LOLESPORTS_LEAGUES",
-                                  os.getenv("LOLESPORTS_LEAGUE", "lpl,lck,lec,vcs,worlds"))
+                                  os.getenv("LOLESPORTS_LEAGUE", "lpl,lck,lec,vcs,worlds,demacia_cup"))
         leagues = list(dict.fromkeys(value.strip().lower() for value in leagues_text.split(",")
                                      if value.strip()))
         if not leagues:
@@ -161,13 +161,16 @@ def main():
             league_slug=league, match_id=free_match, game_ids=free_games,
             poll_seconds=int(os.getenv("LOLESPORTS_POLL_SECONDS", "30")),
             discover_seconds=int(os.getenv("LOLESPORTS_DISCOVER_SECONDS", "120")),
-            window_delay_seconds=int(os.getenv("LOLESPORTS_WINDOW_DELAY_SECONDS", "40")))
+            window_delay_seconds=int(os.getenv("LOLESPORTS_WINDOW_DELAY_SECONDS", "40")),
+            probe_missing_live=(league == "demacia_cup"))
             for league in leagues]
         history_sync = CompletedHistorySync(args.db, model, leagues,
             interval_seconds=int(os.getenv("LOLESPORTS_HISTORY_SYNC_SECONDS", "21600")),
             days=int(os.getenv("LOLESPORTS_HISTORY_DAYS", "14")),
             workers=int(os.getenv("LOLESPORTS_HISTORY_WORKERS", "2")),
-            max_new_games=int(os.getenv("LOLESPORTS_HISTORY_MAX_NEW_GAMES", "20")))
+            max_new_games=int(os.getenv("LOLESPORTS_HISTORY_MAX_NEW_GAMES", "20")),
+            initial_delay_seconds=int(os.getenv(
+                "LOLESPORTS_HISTORY_INITIAL_DELAY_SECONDS", "60")))
         collector = MultiLeagueCollector(collectors, history_sync)
     if collector:
         collector.start()

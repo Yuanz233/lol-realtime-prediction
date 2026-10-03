@@ -1,6 +1,6 @@
 param(
     [int]$Port = 8000,
-    [string]$Leagues = "lpl,lck,lec,vcs,worlds",
+    [string]$Leagues = "lpl,lck,lec,vcs,worlds,demacia_cup",
     [switch]$AllowManualResult,
     [switch]$LogToFile
 )
@@ -23,6 +23,7 @@ $env:LOLESPORTS_POLL_SECONDS = "30"
 $env:LOLESPORTS_DISCOVER_SECONDS = "120"
 $env:LOLESPORTS_WINDOW_DELAY_SECONDS = "40"
 $env:LOLESPORTS_HISTORY_SYNC_SECONDS = "21600"
+$env:LOLESPORTS_HISTORY_INITIAL_DELAY_SECONDS = "60"
 $env:LOLESPORTS_HISTORY_DAYS = "14"
 $env:LOLESPORTS_HISTORY_WORKERS = "2"
 $env:LOLESPORTS_HISTORY_MAX_NEW_GAMES = "20"

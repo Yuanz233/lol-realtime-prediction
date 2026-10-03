@@ -79,13 +79,14 @@ def import_unlabeled(item, db_path, model, step_seconds=30, pause_seconds=.2,
 
 class CompletedHistorySync:
     def __init__(self, db_path, model, leagues, interval_seconds=21600, days=14,
-                 workers=2, max_new_games=20):
+                 workers=2, max_new_games=20, initial_delay_seconds=0):
         self.db_path, self.model = db_path, model
         self.leagues = list(leagues)
         self.interval_seconds = max(900, int(interval_seconds))
         self.days = max(1, int(days))
         self.workers = max(1, min(4, int(workers)))
         self.max_new_games = max(1, int(max_new_games))
+        self.initial_delay_seconds = max(0, int(initial_delay_seconds))
         self.running = False
         self.last_started_at = None
         self.last_finished_at = None
@@ -96,6 +97,8 @@ class CompletedHistorySync:
         threading.Thread(target=self._run, daemon=True, name="completed-history-sync").start()
 
     def _run(self):
+        if self.initial_delay_seconds:
+            time.sleep(self.initial_delay_seconds)
         while True:
             self.run_once()
             time.sleep(self.interval_seconds)

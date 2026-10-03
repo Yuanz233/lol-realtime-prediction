@@ -1,7 +1,7 @@
 param(
     [string]$TaskName = "LoLRealtimePrediction",
     [int]$Port = 8000,
-    [string]$Leagues = "lpl,lck,lec,vcs,worlds"
+    [string]$Leagues = "lpl,lck,lec,vcs,worlds,demacia_cup"
 )
 
 $ErrorActionPreference = "Stop"

@@ -116,7 +116,8 @@ class LoLEsportsCollector:
 
     def __init__(self, db_path, model, league_slug="lpl", match_id=None, game_ids=(),
                  poll_seconds=30, discover_seconds=120, fetch=website_json,
-                 schedule_fetch=read_schedule, window_delay_seconds=40):
+                 schedule_fetch=read_schedule, window_delay_seconds=40,
+                 probe_missing_live=False):
         self.db_path, self.model = db_path, model
         self.league_slug = league_slug
         self.match_id = str(match_id) if match_id else None
@@ -126,6 +127,7 @@ class LoLEsportsCollector:
         self.poll_seconds = max(1, int(poll_seconds))
         self.discover_seconds = max(60, int(discover_seconds))
         self.window_delay_seconds = max(30, int(window_delay_seconds))
+        self.probe_missing_live = bool(probe_missing_live)
         self.fetch, self.schedule_fetch = fetch, schedule_fetch
         self.team_names = {}
         self.beginnings = {}
@@ -154,7 +156,89 @@ class LoLEsportsCollector:
             self.run_once()
             time.sleep(1)
 
-    def discover(self):
+    def _missing_live_event(self, events, now):
+        """Recover a live BO1 omitted from the website's embedded schedule.
+
+        DCGI has been observed removing the current BO1 event while leaving the
+        following hourly event in the page.  Probe only the few IDs immediately
+        before that next game, and accept one only when a recent feed window
+        explicitly says it is still in game.  This keeps the fallback bounded
+        and fail-closed instead of scanning arbitrary game IDs.
+        """
+        if (not self.probe_missing_live or self.fixed_match_id
+                or any(item.get("state") == "inProgress" for item in events.values())):
+            return None
+        upcoming = []
+        for item in events.values():
+            if item.get("state") != "unstarted":
+                continue
+            try:
+                start = timestamp(item["startTime"]).timestamp()
+            except (KeyError, TypeError, ValueError):
+                continue
+            games = (item.get("match") or {}).get("games") or []
+            if games and str(games[0].get("id", "")).isdigit():
+                upcoming.append((start, item, int(games[0]["id"])))
+        if not upcoming:
+            return None
+        start, following, first_game_id = min(upcoming, key=lambda value: value[0])
+        if not (now - 5400 <= start <= now + 5400):
+            return None
+        query_at = datetime.fromtimestamp(now, timezone.utc) - timedelta(
+            seconds=self.window_delay_seconds + 90)
+        # In the observed BO1 sequence the previous game is two IDs earlier;
+        # try that first, then the nearby alternatives if the sequence shifts.
+        for offset in (2, 1, 3, 4):
+            candidate = str(first_game_id - offset)
+            try:
+                payload = self.fetch("window", candidate, query_at)
+            except Exception:
+                continue
+            if payload is None or str(payload.get("esportsGameId")) != candidate:
+                continue
+            frames = payload.get("frames") or []
+            if not frames:
+                continue
+            latest = max(frames, key=lambda frame: frame.get("rfc460Timestamp", ""))
+            if latest.get("gameState") not in ("in_game", "paused"):
+                continue
+            try:
+                source_time = timestamp(latest["rfc460Timestamp"]).timestamp()
+            except (KeyError, TypeError, ValueError):
+                continue
+            if not (-300 <= now - source_time <= 1200):
+                continue
+            match_id = str(payload.get("esportsMatchId") or "")
+            if not match_id:
+                continue
+            event_start = latest["rfc460Timestamp"]
+            try:
+                opening = self.fetch("window", candidate, None)
+                opening_frames = (opening or {}).get("frames") or []
+                if (str((opening or {}).get("esportsGameId")) == candidate
+                        and str((opening or {}).get("esportsMatchId")) == match_id
+                        and opening_frames):
+                    event_start = min(frame["rfc460Timestamp"] for frame in opening_frames
+                                      if frame.get("rfc460Timestamp"))
+            except Exception:
+                pass
+            names = metadata_team_names(payload)
+            match_teams = [{"id": "%s:%s" % (match_id, team_id), "code": name,
+                            "name": name}
+                           for team_id, name in names.items()]
+            return {"id": match_id, "type": "match", "state": "inProgress",
+                    "startTime": event_start,
+                    "blockName": following.get("blockName"),
+                    "league": following.get("league"),
+                    "tournament": following.get("tournament"),
+                    "matchTeams": match_teams,
+                    "match": {"id": match_id, "state": "inProgress",
+                              "games": [{"id": candidate, "number": 1,
+                                         "state": "inProgress"}]}}
+        return None
+
+    def discover(self, now=None):
+        now = time.time() if now is None else now
         html = self.schedule_fetch(self.league_slug)
         events = {}
         for state in ("inProgress", "unstarted", "completed"):
@@ -163,6 +247,9 @@ class LoLEsportsCollector:
             except ValueError as exc:
                 if "no matching" not in str(exc):
                     raise
+        recovered = self._missing_live_event(events, now)
+        if recovered is not None:
+            events[str(recovered["id"])] = recovered
         selected = events.get(self.match_id) if self.fixed_match_id and self.match_id else None
         if self.fixed_match_id and selected is None:
             raise ValueError("pinned match is no longer present in current schedule page")
@@ -213,7 +300,7 @@ class LoLEsportsCollector:
         if now >= self.next_discover:
             self.next_discover = now + self.discover_seconds
             try:
-                self.discover()
+                self.discover(now)
                 self.last_error = None
             except Exception as exc:
                 self._error("schedule", exc)
