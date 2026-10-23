@@ -119,6 +119,41 @@ class FlowTest(unittest.TestCase):
                              "demacia_cup")
             self.assertEqual(stored["latest"]["frame"]["blue"]["name"], "RED")
 
+    def test_worlds_missing_live_uses_lowest_nearby_id_not_kickoff_order(self):
+        now = datetime.now(timezone.utc).replace(microsecond=0)
+        def event(event_id, game_id, minutes):
+            return {"id": event_id, "type": "match", "state": "unstarted",
+                    "startTime": (now + timedelta(minutes=minutes)).isoformat().replace(
+                        "+00:00", "Z"), "blockName": "Swiss",
+                    "league": {"slug": "worlds", "name": "Worlds"},
+                    "tournament": {"name": "2026"}, "matchTeams": [],
+                    "match": {"id": event_id, "games": [
+                        {"id": game_id, "number": 1, "state": "unstarted"}]}}
+        # The next kickoff has game 14, while a later scheduled event has game
+        # 8. The omitted live game is 6, so kickoff order alone cannot find it.
+        embedded = {"rehydrate": {"query": {"data": {"esports": {"events": [
+            event("13", "14", 10), event("7", "8", 240)]}}}}}
+        html = '<script>(window[Symbol.for("ApolloSSRDataTransport")] ??= []).push(' \
+            + json.dumps(embedded) + ')</script>'
+        source = {"rfc460Timestamp": (now - timedelta(minutes=2)).isoformat().replace(
+                      "+00:00", "Z"), "gameState": "in_game",
+                  "blueTeam": {"totalGold": 39000}, "redTeam": {"totalGold": 43000}}
+        payload = {"esportsGameId": "6", "esportsMatchId": "5",
+                   "gameMetadata": {
+                       "blueTeamMetadata": {"esportsTeamId": "1",
+                           "participantMetadata": [{"summonerName": "IG Top"}]},
+                       "redTeamMetadata": {"esportsTeamId": "2",
+                           "participantMetadata": [{"summonerName": "GEN Top"}]}},
+                   "frames": [source]}
+        collector = LoLEsportsCollector("unused.sqlite3", BASELINE,
+            league_slug="worlds", fetch=lambda kind, game_id, start=None:
+                payload if game_id == "6" else None,
+            schedule_fetch=lambda league: html, probe_missing_live=True)
+        collector.discover(now.timestamp())
+        self.assertEqual(collector.match_id, "5")
+        self.assertEqual(collector.game_ids, ["6"])
+        self.assertEqual(collector.team_names, {"1": "IG", "2": "GEN"})
+
     def test_late_join_saves_recovered_early_frames(self):
         now = datetime.now(timezone.utc)
         beginning = now - timedelta(minutes=21)
@@ -149,6 +184,36 @@ class FlowTest(unittest.TestCase):
             collector._poll_game("101")
             curve = game(db, "101")
             self.assertEqual(curve["points"][0]["time"], 0)
+            self.assertGreater(curve["points"][-1]["time"], 1100)
+
+    def test_optional_backfill_timeout_does_not_drop_live_curve(self):
+        now = datetime.now(timezone.utc)
+        def source(at, gold):
+            return {"rfc460Timestamp": at.isoformat().replace("+00:00", "Z"),
+                    "gameState": "in_game",
+                    "blueTeam": {"totalGold": gold, "totalKills": 1, "towers": 0,
+                                 "dragons": [], "barons": 0, "inhibitors": 0},
+                    "redTeam": {"totalGold": gold, "totalKills": 1, "towers": 0,
+                                "dragons": [], "barons": 0, "inhibitors": 0}}
+        def payload(frames):
+            return {"esportsGameId": "101", "esportsMatchId": "9",
+                    "gameMetadata": {"blueTeamMetadata": {"esportsTeamId": "1"},
+                                     "redTeamMetadata": {"esportsTeamId": "2"}},
+                    "frames": frames}
+        def fetch(kind, game_id, start=None):
+            if start is None:
+                return payload([source(now - timedelta(minutes=20), 2500)])
+            if start > now - timedelta(minutes=5):
+                return payload([source(now - timedelta(minutes=1), 30000)])
+            raise TimeoutError("temporary archived-window timeout")
+        with tempfile.TemporaryDirectory() as folder:
+            db = str(Path(folder) / "timeout.sqlite3")
+            collector = LoLEsportsCollector(db, BASELINE, match_id="9", game_ids=["101"],
+                fetch=fetch, schedule_fetch=lambda league: "")
+            collector.team_names = {"1": "蓝队", "2": "红队"}
+            collector._poll_game("101")
+            curve = game(db, "101")
+            self.assertEqual(collector.phase, "in_game")
             self.assertGreater(curve["points"][-1]["time"], 1100)
 
     def test_expired_unfinished_game_is_pending_history_not_live_or_stale(self):

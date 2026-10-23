@@ -35,15 +35,22 @@ def website_json(kind, game_id, start=None, timeout=20):
         url += "?" + urllib.parse.urlencode({"startingTime": value})
     request = urllib.request.Request(url, headers={
         "Accept": "application/json", "User-Agent": "lol-realtime-prediction/0.1"})
-    try:
-        with urllib.request.urlopen(request, timeout=timeout, context=TLS_CONTEXT) as response:
-            if response.status == 204:
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=timeout,
+                                        context=TLS_CONTEXT) as response:
+                if response.status == 204:
+                    return None
+                return json.load(response)
+        except urllib.error.HTTPError as exc:
+            if exc.code in (204, 404):
                 return None
-            return json.load(response)
-    except urllib.error.HTTPError as exc:
-        if exc.code in (204, 404):
-            return None
-        raise
+            if exc.code not in (429, 500, 502, 503, 504) or attempt == 2:
+                raise
+        except (TimeoutError, urllib.error.URLError):
+            if attempt == 2:
+                raise
+        time.sleep(.5 * (attempt + 1))
 
 
 def schedule_team_names(event):
@@ -159,11 +166,11 @@ class LoLEsportsCollector:
     def _missing_live_event(self, events, now):
         """Recover a live BO1 omitted from the website's embedded schedule.
 
-        DCGI has been observed removing the current BO1 event while leaving the
-        following hourly event in the page.  Probe only the few IDs immediately
-        before that next game, and accept one only when a recent feed window
-        explicitly says it is still in game.  This keeps the fallback bounded
-        and fail-closed instead of scanning arbitrary game IDs.
+        DCGI and Worlds have been observed removing the current BO1 event while
+        leaving later events in the page. Probe only the few IDs immediately
+        before the lowest nearby scheduled game ID, and accept one only when a
+        recent feed window explicitly says it is still in game. This keeps the
+        fallback bounded and fail-closed instead of scanning arbitrary IDs.
         """
         if (not self.probe_missing_live or self.fixed_match_id
                 or any(item.get("state") == "inProgress" for item in events.values())):
@@ -181,9 +188,17 @@ class LoLEsportsCollector:
                 upcoming.append((start, item, int(games[0]["id"])))
         if not upcoming:
             return None
-        start, following, first_game_id = min(upcoming, key=lambda value: value[0])
+        start, following, _ = min(upcoming, key=lambda value: value[0])
         if not (now - 5400 <= start <= now + 5400):
             return None
+        nearby = [value for value in upcoming
+                  if now - 5400 <= value[0] <= now + 86400]
+        if not nearby:
+            return None
+        # Event IDs can be assigned independently of kickoff order. Worlds
+        # 2026 omitted game ...006 while its next chronological event was
+        # ...014; the minimum nearby scheduled game (...008) is the safe anchor.
+        first_game_id = min(value[2] for value in nearby)
         query_at = datetime.fromtimestamp(now, timezone.utc) - timedelta(
             seconds=self.window_delay_seconds + 90)
         # In the observed BO1 sequence the previous game is two IDs earlier;
@@ -356,6 +371,8 @@ class LoLEsportsCollector:
             except urllib.error.HTTPError as exc:
                 if exc.code != 400:
                     raise
+            except (TimeoutError, urllib.error.URLError):
+                continue
         recent = recent or first
         if str(recent.get("esportsGameId")) != game_id:
             raise ValueError("latest window returned another game ID")
@@ -383,6 +400,8 @@ class LoLEsportsCollector:
                         if exc.code != 400:
                             raise
                         earlier = None
+                    except (TimeoutError, urllib.error.URLError):
+                        earlier = None
                     earlier_frames = (earlier or {}).get("frames") or []
                     if earlier_frames:
                         if str(earlier.get("esportsMatchId")) != self.match_id:
@@ -403,6 +422,8 @@ class LoLEsportsCollector:
                         except urllib.error.HTTPError as exc:
                             if exc.code != 400:
                                 raise
+                            earlier = None
+                        except (TimeoutError, urllib.error.URLError):
                             earlier = None
                         earlier_frames = (earlier or {}).get("frames") or []
                         if not earlier_frames:

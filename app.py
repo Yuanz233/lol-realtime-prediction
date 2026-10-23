@@ -162,7 +162,7 @@ def main():
             poll_seconds=int(os.getenv("LOLESPORTS_POLL_SECONDS", "30")),
             discover_seconds=int(os.getenv("LOLESPORTS_DISCOVER_SECONDS", "120")),
             window_delay_seconds=int(os.getenv("LOLESPORTS_WINDOW_DELAY_SECONDS", "40")),
-            probe_missing_live=(league == "demacia_cup"))
+            probe_missing_live=(league in ("worlds", "demacia_cup")))
             for league in leagues]
         history_sync = CompletedHistorySync(args.db, model, leagues,
             interval_seconds=int(os.getenv("LOLESPORTS_HISTORY_SYNC_SECONDS", "21600")),
