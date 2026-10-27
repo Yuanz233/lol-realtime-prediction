@@ -36,7 +36,7 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
-打开 `http://127.0.0.1:8000`。直接运行默认启用免费的 LoL Esports 采集器，并自动发现 LPL、LCK、LEC、VCS、Worlds 和 DCGI；它使用网站展示接口，仍属于没有稳定性保证的实验路径。默认每30秒保存一次，与训练样本间隔一致。DCGI 的连续 BO1 赛程偶尔会在开赛后暂时移除当前赛程项，采集器会在下一场开赛前仅探测相邻的少量游戏 ID，并且只有实时帧明确为 `in_game` 或 `paused` 才接入。如需纯离线查看历史，可用 `LIVE_PROVIDER=none python app.py`。
+打开 `http://127.0.0.1:8000`。直接运行默认启用免费的 LoL Esports 采集器，并自动发现 LPL、LCK、LEC、VCS、Worlds 和 DCGI；它使用网站展示接口，仍属于没有稳定性保证的实验路径。默认每30秒保存一次，与训练样本间隔一致。官网赛程状态可能晚于实际比赛：采集器会用已收到的结束帧跳过仍被标为进行中的上一场，在计划时间前三小时开始验证下一场，并对官网临时移除的当前场次探测相邻的少量游戏 ID；只有实时帧明确为 `in_game` 或 `paused` 才把对局标为当前比赛。如需纯离线查看历史，可用 `LIVE_PROVIDER=none python app.py`。
 
 网页、JavaScript、CSS和JSON接口都返回 `Cache-Control: no-store`，更新代码并重启服务后，手机重新载入页面即可取得最新版本。
 

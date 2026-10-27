@@ -124,7 +124,7 @@ class LoLEsportsCollector:
     def __init__(self, db_path, model, league_slug="lpl", match_id=None, game_ids=(),
                  poll_seconds=30, discover_seconds=120, fetch=website_json,
                  schedule_fetch=read_schedule, window_delay_seconds=40,
-                 probe_missing_live=False):
+                 probe_missing_live=False, early_poll_seconds=10800):
         self.db_path, self.model = db_path, model
         self.league_slug = league_slug
         self.match_id = str(match_id) if match_id else None
@@ -134,6 +134,7 @@ class LoLEsportsCollector:
         self.poll_seconds = max(1, int(poll_seconds))
         self.discover_seconds = max(60, int(discover_seconds))
         self.window_delay_seconds = max(30, int(window_delay_seconds))
+        self.early_poll_seconds = max(3600, int(early_poll_seconds))
         self.probe_missing_live = bool(probe_missing_live)
         self.fetch, self.schedule_fetch = fetch, schedule_fetch
         self.team_names = {}
@@ -154,6 +155,16 @@ class LoLEsportsCollector:
                             "tournament_name": "未知赛事", "stage_name": "未知阶段",
                             "event_start": None}
 
+    def _has_unfinished_game(self, event):
+        """Reconcile stale schedule state with games completed by the live feed."""
+        games = (event.get("match") or {}).get("games") or []
+        if not games:
+            return True
+        current_match = str(event.get("id")) == self.match_id
+        return any(game.get("state") not in ("completed", "unneeded")
+                   and not (current_match and str(game.get("id")) in self.completed)
+                   for game in games)
+
     def start(self):
         threading.Thread(target=self._run, daemon=True,
                          name="lolesports-%s-collector" % self.league_slug).start()
@@ -173,7 +184,8 @@ class LoLEsportsCollector:
         fallback bounded and fail-closed instead of scanning arbitrary IDs.
         """
         if (not self.probe_missing_live or self.fixed_match_id
-                or any(item.get("state") == "inProgress" for item in events.values())):
+                or any(item.get("state") == "inProgress" and self._has_unfinished_game(item)
+                       for item in events.values())):
             return None
         upcoming = []
         for item in events.values():
@@ -189,7 +201,7 @@ class LoLEsportsCollector:
         if not upcoming:
             return None
         start, following, _ = min(upcoming, key=lambda value: value[0])
-        if not (now - 5400 <= start <= now + 5400):
+        if not (now - self.early_poll_seconds <= start <= now + self.early_poll_seconds):
             return None
         nearby = [value for value in upcoming
                   if now - 5400 <= value[0] <= now + 86400]
@@ -203,7 +215,7 @@ class LoLEsportsCollector:
             seconds=self.window_delay_seconds + 90)
         # In the observed BO1 sequence the previous game is two IDs earlier;
         # try that first, then the nearby alternatives if the sequence shifts.
-        for offset in (2, 1, 3, 4):
+        for offset in (2, 1, 3, 4, 5, 6, 7, 8):
             candidate = str(first_game_id - offset)
             try:
                 payload = self.fetch("window", candidate, query_at)
@@ -269,13 +281,9 @@ class LoLEsportsCollector:
         if self.fixed_match_id and selected is None:
             raise ValueError("pinned match is no longer present in current schedule page")
         if selected is None:
-            def has_unfinished_game(item):
-                games = (item.get("match") or {}).get("games") or []
-                return not games or any(game.get("state") not in ("completed", "unneeded")
-                                        for game in games)
             candidates = [item for item in events.values()
                           if item.get("state") in ("inProgress", "unstarted")
-                          and has_unfinished_game(item)]
+                          and self._has_unfinished_game(item)]
             if not candidates:
                 self.match_id = None
                 self.game_ids = []
@@ -289,6 +297,7 @@ class LoLEsportsCollector:
         selected_match_id = str(selected["id"])
         if self.match_id != selected_match_id:
             self.match_id = selected_match_id
+            self.active_game_id = None
             self.completed.clear()
             self.beginnings.clear()
             self.last_source.clear()
@@ -319,7 +328,7 @@ class LoLEsportsCollector:
                 self.last_error = None
             except Exception as exc:
                 self._error("schedule", exc)
-        if (self.scheduled_start and now < self.scheduled_start - 3600
+        if (self.scheduled_start and now < self.scheduled_start - self.early_poll_seconds
                 and not any(value in self.beginnings for value in self.game_ids)):
             self.phase = "scheduled"
             self.active_game_id = None
@@ -332,7 +341,6 @@ class LoLEsportsCollector:
             self.phase = "finished"
             self.active_game_id = None
             return
-        self.active_game_id = current
         try:
             self._poll_game(current)
             self.last_error = None
@@ -343,6 +351,7 @@ class LoLEsportsCollector:
         first = self.fetch("window", game_id, None)
         if first is None:
             self.phase = "preparing"
+            self.active_game_id = None
             return
         if str(first.get("esportsGameId")) != game_id:
             raise ValueError("feed returned another game ID")
@@ -353,6 +362,7 @@ class LoLEsportsCollector:
         frames = first.get("frames") or []
         if not frames:
             self.phase = "preparing"
+            self.active_game_id = None
             return
         # A far-future window is clamped by the website endpoint to its latest
         # currently published tail. This is verified by the live probe before
@@ -440,6 +450,7 @@ class LoLEsportsCollector:
             if game_id not in self.beginnings:
                 if first_playable is None:
                     self.phase = "preparing"
+                    self.active_game_id = None
                     return
                 self.beginnings[game_id] = timestamp(first_playable["rfc460Timestamp"])
         beginning = self.beginnings[game_id]
@@ -451,6 +462,7 @@ class LoLEsportsCollector:
                 continue
             state = source.get("gameState")
             if state == "paused":
+                self.active_game_id = game_id
                 self.phase = "paused"
                 self.pause_started.setdefault(game_id, source_time)
                 self.last_source[game_id] = source_time
@@ -460,6 +472,7 @@ class LoLEsportsCollector:
                     0, (source_time - self.pause_started.pop(game_id)).total_seconds())
             if state not in ("in_game", "finished"):
                 self.phase = "preparing"
+                self.active_game_id = None
                 continue
             frame = live_frame(recent, source, beginning, self.team_names,
                                self.paused_seconds.get(game_id, 0), self.competition)
@@ -476,8 +489,10 @@ class LoLEsportsCollector:
             self.last_source[game_id] = source_time
             if state == "finished":
                 self.completed.add(game_id)
+                self.active_game_id = None
                 self.phase = "waiting_next_game"
                 return
+            self.active_game_id = game_id
             self.phase = "in_game"
 
     def status(self):

@@ -71,6 +71,41 @@ class FlowTest(unittest.TestCase):
         self.assertIsNone(collector.match_id)
         self.assertEqual(collector.game_ids, [])
 
+    def test_completed_live_match_does_not_block_an_early_following_match(self):
+        now = datetime.now(timezone.utc).replace(microsecond=0)
+        previous = {"id": "9", "type": "match", "state": "inProgress",
+                    "startTime": (now - timedelta(hours=1)).isoformat().replace(
+                        "+00:00", "Z"), "league": {"slug": "worlds"},
+                    "matchTeams": [], "match": {"id": "9", "games": [
+                        {"id": "101", "number": 1, "state": "unstarted"}]}}
+        following = {"id": "10", "type": "match", "state": "unstarted",
+                     "startTime": (now + timedelta(hours=2)).isoformat().replace(
+                         "+00:00", "Z"), "league": {"slug": "worlds"},
+                     "matchTeams": [], "match": {"id": "10", "games": [
+                         {"id": "201", "number": 1, "state": "unstarted"}]}}
+        embedded = {"rehydrate": {"query": {"data": {"esports": {
+            "events": [previous, following]}}}}}
+        html = '<script>(window[Symbol.for("ApolloSSRDataTransport")] ??= []).push(' \
+            + json.dumps(embedded) + ')</script>'
+        polled = []
+
+        def fetch(kind, game_id, start=None):
+            polled.append(game_id)
+            return None
+
+        collector = LoLEsportsCollector("unused.sqlite3", BASELINE,
+            league_slug="worlds", fetch=fetch, schedule_fetch=lambda league: html,
+            probe_missing_live=False)
+        collector.match_id = "9"
+        collector.game_ids = ["101"]
+        collector.completed.add("101")
+        collector.run_once(now=now.timestamp())
+        self.assertEqual(collector.match_id, "10")
+        self.assertEqual(collector.game_ids, ["201"])
+        self.assertEqual(collector.phase, "preparing")
+        self.assertIsNone(collector.active_game_id)
+        self.assertEqual(polled, ["201"])
+
     def test_dcgi_recovers_live_bo1_omitted_before_next_schedule_item(self):
         now = datetime.now(timezone.utc).replace(microsecond=0)
         following = {"id": "379", "type": "match", "state": "unstarted",
@@ -295,6 +330,7 @@ class FlowTest(unittest.TestCase):
             start = datetime(2026, 9, 19, 9, tzinfo=timezone.utc).timestamp()
             collector.run_once(now=start)
             self.assertEqual(collector.phase, "preparing")
+            self.assertIsNone(collector.active_game_id)
             self.assertIsNone(game(db, "101"))
             ready["value"] = True
             collector.run_once(now=start + 1)
